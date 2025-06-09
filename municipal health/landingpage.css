@@ -179,7 +179,7 @@ body {
 .hero {
   background-image: 
   linear-gradient(270deg, rgba(63, 175, 153, 0) 0.47%, rgba(63, 175, 153, 0.5) 74.45%), 
-  url('/images/bgImg.png');
+  url('images/bgImg.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -296,7 +296,7 @@ body {
 }
 
 .section-bg {
-  background: url('/images/86d1d93bb8a9a135a63e799b85efad0ca1c1a540.png') lightgray -131.25px -130.824px / 112.399% 116.772% no-repeat;
+  background: url('images/86d1d93bb8a9a135a63e799b85efad0ca1c1a540.png') lightgray -131.25px -130.824px / 112.399% 116.772% no-repeat;
   background-size: cover;
   background-position:center;
   height: 100vh;

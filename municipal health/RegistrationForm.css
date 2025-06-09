@@ -1,26 +1,14 @@
 
-    html, body {
+  body {
       height: 100%;
-      font-family: Arial, sans-serif;
+      font-family: Inter;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
     }
-
-    header {
-      background-color: #f8fcf9;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    strong{
-      color: #0c6e4f;
-    }
-    
+   
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -682,21 +670,6 @@ footer{
   color: #fff;
 }
 
-.content-footer-right .footer-links {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 15px;
-}
-
-.content-footer-right .footer-links li {
-  margin-bottom: 8px;
-}
-
-.content-footer-right .footer-links a {
-  color: #a0e3d3;
-  text-decoration: none;
-  font-weight: bold;
-}
 
 .icons a {
   margin-right: 10px;

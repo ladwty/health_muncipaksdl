@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Appointment - Fifth Medical Center</title>
+  <title>Appointment - Medical Center of Tandang Sora</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="RegistrationForm.css" />
   <script src="RegistrationForm.js" defer></script>
@@ -34,17 +33,16 @@
             <li><a href="blood_pressure_history.html">Blood Pressure & Sugar Testing</a></li>
           </ul>
         </li>
-        <li class="nav-link"><a href="#">Contact Us</a></li>
+        <li class="nav-link"><a href="contactUs.html">Contact Us</a></li>
         <li class="nav-link"><a href="Doctors.html">Doctors</a></li>
         <li class="nav-link"><a href="#">Services</a></li>
       </ul>
     </nav>
     <div class="nav-buttons">
-      <a href="#" class="btn appointment-btn">Appointment</a>
+      <a href="RegistrationForm.html" class="btn appointment-btn">Appointment</a>
       <a href="LogIn.html" class="btn login-btn"><img src="images/user.png" class="icon"> Log In</a>
     </div>
   </header>
-
 
   <main class="appointment-page">
     <div class="appointment-container">
@@ -60,7 +58,7 @@
         <div class="option" onclick="openModal('modal-returning')">
           <h3>Returning Patients <span>&gt;</span></h3>
           <p>Request using your patient account.</p>
-          <hr />
+          <hr/>
         </div>
         <div class="option">
        <div class="option" onclick="openModal('modal-referring')">
@@ -113,8 +111,6 @@
     </div>
     <button onclick="goToNewPatientStep2()">NEXT →</button>
   </div>
-
-
 
   <!-- NEW PATIENT MODALS 2 -->
   <div id="modal1" class="modal">
@@ -362,8 +358,6 @@
   <button onclick="goToReferringPhysicianStep2()">NEXT →</button>
 </div>
 
-
-
 <!-- REFERRING PHYSICIANS MODAL STEP 2 -->
 <div id="modal-referring2" class="modal">
   <button class="close-btn" onclick="closeModal('modal-referring2')">×</button>
@@ -392,7 +386,6 @@
 </div>
 </div>
 
-
 <!-- REFERRING PHYSICIANS MODAL STEP 3 -->
 <div id="modal-referring3" class="modal">
   <button class="close-btn" onclick="closeModal('modal-referring3')">×</button>
@@ -415,10 +408,6 @@
   <button  >Submit →</button>
 </div>
 </div>
-
-
-
-
 
 <!--FOOTER DIZ-->
 <footer>
@@ -461,7 +450,5 @@
     </div>
 </footer>
 
-  
 </body>
-
 </html>
