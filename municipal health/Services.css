@@ -1,0 +1,142 @@
+*{ 
+padding: 0;
+margin: 0;
+box-sizing: border box
+}
+
+
+/*navbar*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+/*Footer*/
+footer{
+  background-color: #187B5D;
+  color: #ffffff;
+  padding: 40px 80px;
+}
+
+.container-footer{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo{
+  padding: 0px 10px ;
+  align-content: center;
+}
+.content-footer-left .content-footer-center .content-footer-right{
+  flex: 1;
+  min-width: 250px;
+}
+
+.logo-info{
+  display: flex;
+  flex-direction: column;
+}
+
+.content-footer-left{
+  display: flex;
+  align-items: center;
+}
+
+.content-footer-left h2 {
+  font-size: 25px;
+  margin: 10px 0 5px;
+}
+
+.content-footer-left p {
+  font-size: 14px;
+}
+
+.content-footer-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.content-footer-center h3 {
+  font-size: 20px;
+  margin-top: 15px;
+  color: #a0e3d3;
+}
+
+.content-footer-center p {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.content-footer-right .footer-links {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.content-footer-right .footer-links li {
+  margin-bottom: 8px;
+}
+
+.content-footer-right .footer-links a {
+  color: #a0e3d3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.icons a {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.icons img {
+  width: 24px;
+  height: 24px;
+}
+
+.content-footer-bottom {
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 14px;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.policy-links {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2px;
+}
+
+.policy-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.icon{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.icons a img {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+}
