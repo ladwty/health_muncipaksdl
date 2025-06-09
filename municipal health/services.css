@@ -78,6 +78,7 @@ body {
   text-decoration: none;
   font-weight: bold;
 }
+
 .service-button {
   display: inline-block;
   margin: 1rem auto;
@@ -102,6 +103,7 @@ body {
   background-color: #2aa690;
   color: #fff;
 }
+
 .service-card {
   text-align: center;
 }
@@ -111,8 +113,6 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
-
 
 /*navbar*/
 .navbar {
