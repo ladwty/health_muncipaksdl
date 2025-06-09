@@ -76,3 +76,29 @@ function goBackToReferringPhysicianStep2() {
   openModal('modal-referring2');
   scrollToTop();
 }
+
+
+// --- LABORATORY TEST ---
+function goToReferringPhysicianStep2() {
+  closeModal('modal-labtest');
+  openModal('modal-labtest2');
+  scrollToTop();
+}
+
+function goBackToReferringPhysicianStep1() {
+  closeModal('modal-labtest2');
+  openModal('modal-labtest');
+  scrollToTop();
+}
+
+function goToReferringPhysicianStep3() {
+  closeModal('modal-labtest2');
+  openModal('modal-labtest3');
+  scrollToTop();
+}
+
+function goBackToReferringPhysicianStep2() {
+  closeModal('modal-labtest3');
+  openModal('modal-labtest2');
+  scrollToTop();
+}
