@@ -7,7 +7,7 @@ function closeModal(id) {
   document.getElementById(id).style.display = 'none';
 }
 function closeAllModals() {
-  document.getElementById('backdrop').style.display = 'none';
+  document.getElementById('backdrop').style.display = 'block';
 }
 
 // --- New Patient ---
