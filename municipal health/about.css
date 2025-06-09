@@ -174,13 +174,6 @@ body {
   }
 }
 
-.appointment-btn {
-  background-color: #18a88f;
-  color: white !important;
-  padding: 6px 12px;
-  border-radius: 6px;
-}
-
 .hero {
   background: #A6D3C0;
 box-shadow: 0px 25px 76px 0px rgba(152, 190, 174, 0.70);
