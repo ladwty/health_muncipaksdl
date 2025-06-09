@@ -1,16 +1,14 @@
-// Utility
-function closeModal(id) {
-  document.getElementById(id).style.display = 'none';
-}
-
 function openModal(id) {
+  document.getElementById('backdrop').style.display = 'block';
   document.getElementById(id).style.display = 'block';
 }
-
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+function closeModal(id) {
+  document.getElementById('backdrop').style.display = 'none';
+  document.getElementById(id).style.display = 'none';
 }
-
+function closeAllModals() {
+  document.getElementById('backdrop').style.display = 'none';
+}
 
 // --- New Patient ---
 function goToNewPatientStep2() {
