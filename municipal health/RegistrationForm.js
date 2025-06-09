@@ -73,7 +73,6 @@ function goBackToReferringPhysicianStep2() {
   scrollToTop();
 }
 
-
 // --- LABORATORY TEST ---
 function goTolabtest2() {
   closeModal('modal-labtest');
@@ -97,4 +96,13 @@ function goBackTolabtest2() {
   closeModal('modal-labtest3');
   openModal('modal-labtest2');
   scrollToTop();
+}
+
+// --- New Patient Submission ---
+function handleNewPatientSubmit() {
+  closeModal('modal1');
+  alert("Thank you! Your appointment request has been submitted successfully.");
+  setTimeout(function () {
+    window.location.href = "landingpage.html"; // Replace with your real appointment page
+  }, 2000);
 }
