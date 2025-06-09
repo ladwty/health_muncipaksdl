@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-image: url('images/86d1d93bb8a9a135a63e799b85efad0ca1c1a540.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-panel {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-card {
+  background: #F6FFF4;;
+  padding: 50px 100px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-card img {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.center-name {
+  font-size: 35px;
+  color: #2f9e7e;
+  font-family: "Inria Ser";
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.before-svg {
+  margin-right: 0;
+  letter-spacing: 0;
+}
+
+.after-svg {
+  margin-left: 0;
+  letter-spacing: 0;
+}
+
+.center-name svg {
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: -12px;
+  margin-right: -12px;
+  width: 40px;
+  height: auto;
+}
+
+.right-panel {
+  width: 40%;
+  background-color: #34a472;
+  border-top-left-radius: 400px;
+  padding: 20px 80px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.right-panel h1 {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.user-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.form-group input::placeholder {
+  color: #ffffff;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: #222;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .right-panel {
+    border-top-left-radius: 0;
+    border-top-right-radius: 100px;
+    width: 100%;
+  }
+
+  .left-panel {
+    width: 100%;
+    padding: 20px;
+  }
+}
