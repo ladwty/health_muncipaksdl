@@ -6,8 +6,9 @@
 }
 
 body {
-  background: #f8f8f8;
   color: #333;
+  background: url('images/86d1d93bb8a9a135a63e799b85efad0ca1c1a540.png') no-repeat center center fixed;
+  background-size: cover;
 }
 
 /*Nabvar ngani*/
