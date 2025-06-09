@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Serviceform.css" />
+</head>
+<body>
+    
+  <div id="backdrop" class="backdrop-blur"></div>
+
+  <!-- NEW PATIENT MODALS -->
+  <div id="modal" class="modal">
+   
+    <h2>New Patient</h2>
+    <div class="section">
+      <strong>In Case of Emergency</strong><br /> 
+      <strong>Contact Person Information </strong>
+      <input type="text" placeholder="First Name" />
+      <input type="text" placeholder="Last Name" />
+      <input type="text" placeholder="Relationship" />
+      <input type="text" placeholder="Phone Number" />
+    </div>
+    <div class="section">
+      <strong>Taking any medications, currently?</strong><br />
+      <label><input type="radio" name="meds" /> Yes</label>
+      <label><input type="radio" name="meds" /> No</label><br />
+      <br> 
+      <textarea placeholder="Please list medications"></textarea>
+    </div>
+    <div class="section">
+      <strong>Past medical history</strong>
+      <label><input type="checkbox" checked /> Anemia</label>
+      <label><input type="checkbox" checked /> Asthma</label>
+      <label><input type="checkbox" checked /> Bronchitis</label>
+      <label><input type="checkbox" checked /> Chickenpox</label>
+      <label><input type="checkbox" /> Diabetes</label>
+      <br><br>
+    <input type="text" placeholder="Others: ">
+    </div>
+    <div class="section">
+      <strong>Do you smoke?</strong>
+      <label><input type="radio" name="smoke" /> Yes</label>
+      <label><input type="radio" name="smoke" /> No</label>
+      <label><input type="radio" name="smoke" /> Occasionally</label><br>
+      <br>
+<input type="text" placeholder="Others: ">
+    </div>
+    <button onclick="goToNewPatientStep2()">NEXT →</button>
+  </div>
+
+  <!-- NEW PATIENT MODALS 2 -->
+  <div id="modal1" class="modal">
+    <h2>New Patient - Step 2</h2>
+    <div class="section">
+      <strong>Specialist</strong>
+    <div class="section dropdown">
+  <select id="specialist-dropdown" name="specialist-dropdown">
+    <option value="">-- Select Specialist --</option>
+    <option value="cardiology">Cardiology</option>
+    <option value="dermatology">Dermatology</option>
+    <option value="neurology">Neurology</option>
+    <option value="orthopedics">Orthopedics</option>
+    <option value="pediatrics">Pediatrics</option>
+    <option value="pediatrics">Psychiatrist</option>
+  </select>
+</div>
+    </div>
+</body>
+</html>

@@ -19,6 +19,10 @@
         <h2 style="margin: 0; font-size: 22px;">Medical Center of Tandang Sora</h2>
         <p style="font-size: 20px; margin: 0; margin-top: 5px; font-weight: 500;">City of Quezon</p>
     </div>
+
+
+
+
     <nav>
       <ul class="nav-links">
         <li class="nav-link"><a href="about.html">About</a></li>
@@ -44,6 +48,8 @@
     </div>
   </header>
 
+
+
   <main class="appointment-page">
     <div class="appointment-container">
       <div class="appointment-text">
@@ -62,9 +68,15 @@
         </div>
         <div class="option">
        <div class="option" onclick="openModal('modal-referring')">
-
           <h3>Referring Physicians <span>&gt;</span></h3>
           <p>Get consults and refer your patients.</p>
+        </div>
+          <div class="option">
+       <div class="option" onclick="openModal('modal-labtest')">
+<hr/>
+<br>
+          <h3>Laboratory  Test <span>&gt;</span></h3>
+          <p>Comprehensive Diagnostic Solutions for Accurate Health Assessment</p>
         </div>
       </div>
     </div>
@@ -145,7 +157,7 @@
   <div class="section-date">
   <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Availability &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Availability </strong>   
   <br>
-  <div style="display: flex; gap: 150px; align-items:center; margin-top: 10px;  margin-left: 20px;  ">
+  <div style="display: flex; gap: 130px; align-items:center; margin-top: 10px;  margin-left: 15px;  ">
   <input type="date" id="appointment-date" name="appointment-date" 
          style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
 
@@ -256,10 +268,10 @@
   </select>
     </div>
 
-      <div class="section-date">
+       <div class="section-date">
   <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Availability &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Availability </strong>   
   <br>
-  <div style="display: flex; gap: 150px; align-items:center; margin-top: 10px;  margin-left: 20px;  ">
+  <div style="display: flex; gap: 130px; align-items:center; margin-top: 10px;  margin-left: 15px;  ">
   <input type="date" id="appointment-date" name="appointment-date" 
          style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
 
@@ -408,6 +420,128 @@
   <button  >Submit →</button>
 </div>
 </div>
+
+
+
+
+<!-- LAB TEST MODAL STEP 1 -->
+<div id="modal-labtest" class="modal">
+  <button class="close-btn" onclick="closeModal('modal-labtest')">×</button>
+  <h2>Lab Test Request </h2>
+
+   <div class="section">
+  
+    <strong>Upload Your  Laboratory Request </strong>
+     <div class="form-container">
+
+
+    <form action="step2.html" method="get" enctype="multipart/form-data">
+
+      <input type="file" id="lab-request" name="lab-request" accept=".jpg,.jpeg,.png,.pdf" required />
+      <div class="button-row">
+        <span></span>
+      </div>
+    </form>
+  </div>
+    </div>
+ 
+  <button onclick="goTolabtest2()">NEXT →</button>
+</div>
+
+<!-- LAB TEST MODAL STEP 2 -->
+<div id="modal-labtest2" class="modal">
+  <button class="close-btn" onclick="closeModal('modal-labtest2')">×</button>
+  <h2>Lab Test Request - Step 2</h2>
+  <div class="section">
+    <strong >Select Services</strong>
+     <select id="specialist-dropdown" name="specialist-dropdown">
+    <option value="cardiology">Chest X-ray</option>
+    <option value="dermatology">Counseling </option>
+    <option value="neurology">Vaccinations </option>  
+    <option value="orthopedics">General Check-ups </option>
+    <option value="pediatrics">Hiv Testing </option>
+    <option value="pediatrics">Blood Pressure and Sugar Check  </option>
+    <option value="pediatrics">Ultra Sound </option>
+  </select>
+  <br>
+ <div class="section-date">
+  <br>
+  <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Availability &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Availability </strong>   
+  <div style="display: flex; gap: 150px; align-items:center; margin-top: 10px;  margin-left: 20px;  ">
+  <input type="date" id="appointment-date" name="appointment-date" 
+         style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
+
+  <input type="time" id="appointment-time" name="appointment-time" 
+         style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; margin-right: 210px;">
+</div>
+</div>
+</div>
+
+  <div class="section">
+    <strong>Medical Information </strong><br />
+    <strong>Do you have any existing health conditions?</strong>
+      <div class="options">
+        <label><input type="radio" name="healthConditions" value="yes"> Yes</label>
+        <label><input type="radio" name="healthConditions" value="no"> No</label>
+      </div>
+<br>
+        <strong >Are you currently taking any medications?</strong>
+      <div class="options">
+        <label><input type="radio" name="medications" value="yes"> Yes</label>
+        <label><input type="radio" name="medications" value="no"> No</label>
+      </div>
+
+      <br>
+      <strong>Do you have any allergies?</strong>
+      <div class="options">
+        <label><input type="radio" name="allergies" value="yes"> Yes</label>
+        <label><input type="radio" name="allergies" value="no"> No</label>
+      </div>
+  </div>
+
+   
+
+<div class="button-group">
+  <button class="back-btn" onclick="goBackTolabtest1()">← Back</button>
+  <button  onclick="goTolabtest3()" >Next →</button>
+</div>
+</div>
+
+<!-- LAB TEST MODAL STEP 3 -->
+<div id="modal-labtest3" class="modal">
+  <button class="close-btn" onclick="closeModal('modal-labtest3')">×</button>
+  <h2>Lab Test Request - Step 3</h2>
+  <div class="section">
+   
+        <strong >Emergency Contact</strong>
+    <input type="text" placeholder="Full Name" />
+      <input type="text" placeholder="Relationship" />
+      <input type="text" placeholder="Phone Number" />
+      
+  </div>
+
+
+
+
+<div style="display: flex; gap: 10px; align-items: flex-start; margin-top: 10px;">
+  <label class="custom-checkbox">
+    <input type="checkbox" id="confirm-appointment" name="confirm-appointment">
+    <span class="checkmark"></span>
+  </label>
+  <label for="confirm-appointment" style="font-size: 1 em; text-align: justify; font-family: 'Times New Roman', Times, serif; ">
+    Your personal and medical information is confidential and will only be used for your care and clinic-related purposes.
+    We will not share your data with any third party without your explicit consent, except as required by law or for referred
+    medical treatment. By checking this box, you agree to the responsible and secure use of your information.
+  </label>
+</div>
+
+
+<div class="button-group">
+  <button class="back-btn" onclick="goBackTolabtest2()">← Back</button>
+  <button  >Submit →</button>
+</div>
+</div>
+
 
 <!--FOOTER DIZ-->
 <footer>

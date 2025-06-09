@@ -4,30 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Medical Services</title>
-  <link rel="stylesheet" href="Services.css " />
+  <link rel="stylesheet" href="Services.css" />
+  <script src="Services.js" defer></script>
 </head>
-
 <body>
-     <!--Navbar-->
   <header class="navbar">
     <a href="landingpage.html">
-    <div class="logo">
-      <img src="images/Group 8.svg" alt="Logo"/> </a>
-      <div style="text-align: center; color: #187B5D;">
-        <h2 style="margin: 0; font-size: 22px;">Medical Center of Tandang Sora</h2>
-        <p style="font-size: 20px; margin: 0; margin-top: 5px; font-weight: 500;">City of Quezon</p>
+      <div class="logo">
+        <img src="images/Group 8.svg" alt="Logo" />
+      </div>
+    </a>
+    <div style="text-align: center; color: #187B5D;">
+      <h2 style="margin: 0; font-size: 22px;">Medical Center of Tandang Sora</h2>
+      <p style="font-size: 20px; margin: 0; margin-top: 5px; font-weight: 500;">City of Quezon</p>
     </div>
     <nav>
       <ul class="nav-links">
         <li class="nav-link"><a href="#">About</a></li>
-        <li class="nav-link"><a href="#">History <span class="arrow">&#9662</span></a>
+        <li class="nav-link"><a href="#">History <span class="arrow">&#9662;</span></a>
           <ul class="drop-down">
-            <li><a href="general-checkup-img.png">General Check-Up</a></li>
-            <li><a href="History_vaccination.html ">Vaccination</a></li>
+            <li><a href="images/general-checkup-img.png">General Check-Up</a></li>
+            <li><a href="History_vaccination.html">Vaccination</a></li>
             <li><a href="chest_xray.html">Chest X-Ray</a></li>
             <li><a href="body_mass.html">Body Mass Index Result</a></li>
-            <li><a href="Counseling_session.html">counseling-session</a></li>
-            <li><a href="hiv_testing_history.html ">HIV Testing Result</a></li>
+            <li><a href="Counseling_session.html">Counseling Session</a></li>
+            <li><a href="hiv_testing_history.html">HIV Testing Result</a></li>
             <li><a href="blood_pressure_history.html">Blood Pressure & Sugar Testing</a></li>
           </ul>
         </li>
@@ -42,147 +43,68 @@
     </div>
   </header>
 
-  <!--Hero Banner-->
-  <section class="hero">
-    <div class="logo-content">
-      <img src="images/Group 8.svg" alt="Logo" class="logo">
-        <h2 style="color:#116700" class="logo-name">Medical Center of Tandang Sora</h2>
-      </div>
-    <h1>Services</h1>
-  </section>
+  <header class="header">
+    <img src="logo.jpg" alt="Logo" class="logo">
+    <h1>Medical Center of Tandang Sora</h1>
+    <h2>Services</h2>
+  </header>
 
   <section class="services-container">
-
     <div class="service-card">
       <div class="card-image">
         <img src="images/chest-xray-img.png" alt="Chest X-Ray" />
       </div>
-      <div class="card-text"></div>
-      <a class="service-button" href="#">
-        Chest x-Ray Service Department <span>&#x279C;</span>
-      </a>
+      <a href="RegistrationForm.html" class="service-button" data-service="Chest X-Ray">Chest x-Ray Service Department <span>&#x279C;</span></a>
     </div>
 
     <div class="service-card">
       <div class="card-image">
-        <img src="images/bodymass-img.png" alt="BMI Assessment" />
+        <img src="images/bgImg.png" alt="BMI Assessment" />
       </div>
-      <div class="card-text"></div>
-      <a class="service-button" href="#">
-        BMI Service Department <span>&#x279C;</span>
-      </a>
+      <a href="RegistrationForm.html" class="service-button" data-service="BMI">BMI Service Department <span>&#x279C;</span></a>
     </div>
 
     <div class="service-card">
       <div class="card-image">
         <img src="images/counseling-session.png" alt="Counseling" />
       </div>
-      <div class="card-text"></div>
-      <a class="service-button" href="#">
-        Counseling Services Department <span>&#x279C;</span>
-      </a>
+      <a href="RegistrationForm.html" class="service-button" data-service="Counseling">Counseling Services Department <span>&#x279C;</span></a>
     </div>
 
     <div class="service-card">
       <div class="card-image">
         <img src="images/vaccination-img.png" alt="Vaccination" />
       </div>
-      <div class="card-text"></div>
-      <a class="service-button" href="#">
-        Vaccination Service Department <span>&#x279C;</span>
-      </a>
+      <a href="RegistrationForm.html" class="service-button" data-service="Vaccination">Vaccination Service Department <span>&#x279C;</span></a>
     </div>
 
     <div class="service-card">
       <div class="card-image">
         <img src="images/general-checkup-img.png" alt="General Check-Ups" />
       </div>
-      <div class="card-text"></div>
-      <a class="service-button" href="#">
-        General Check-Up Services <span>&#x279C;</span>
-      </a>
+      <a href="RegistrationForm.html" class="service-button" data-service="General Check-Up">General Check-Up Services <span>&#x279C;</span></a>
     </div>
 
     <div class="service-card">
       <div class="card-image">
         <img src="images/freeHiv-img.png" alt="Free HIV Testing" />
       </div>
-      <div class="card-text"></div>
-      <a class="service-button" href="#">
-        HIV Testing Services Department <span>&#x279C;</span>
-      </a>
+      <a href="RegistrationForm.html" class="service-button" data-service="HIV Testing">HIV Testing Services Department <span>&#x279C;</span></a>
     </div>
 
     <div class="service-card">
       <div class="card-image">
         <img src="images/blood-pressue-img.png" alt="Blood Pressure" />
       </div>
-      <div class="card-text"></div>
-      <a class="service-button" href="#">
-        Blood Pressure & Sugar Check Services <span>&#x279C;</span>
-      </a>
+      <a href="RegistrationForm.html" class="service-button" data-service="Blood Pressure">Blood Pressure & Sugar Check Services <span>&#x279C;</span></a>
     </div>
 
     <div class="service-card">
       <div class="card-image">
         <img src="images/ultrasound-img.png" alt="Ultrasound" />
       </div>
-      <div class="card-text"></div>
-      <a class="service-button" href="#">
-        Ultrasound Service Department <span>&#x279C;</span>
-      </a>
+      <a href="RegistrationForm.html" class="service-button" data-service="Ultrasound">Ultrasound Service Department <span>&#x279C;</span></a>
     </div>
-
   </section>
-
-
-
-
-
-
-
-
-
-
-      <!--FOOTER-->
-    <footer>
-  <div class="container-footer">
-    <div class="content-footer-left">
-      <img src="images/Group 8.svg" alt="Logo" class="logo">
-      <div class="logo-info">
-        <h2 style="color:#6BD0A6" class="logo-name">Medical Center of Tandang Sora</h2>
-              <div class="tagline"> <p>Dedicated on our own Citizens</p></div>
-      </div>
-    </div>
-     
-      <div class="content-footer-center">
-        <h3>Mission</h3>
-        <p>To promote the preventive health care and well-being of our 
-          community through quality health services, health education, 
-          and affordable care.</p>
-        <h3>Vision</h3>
-        <p>A healthier, balanced, and empowered community where 
-          everyone has access to basic and essential health services
-          in our whole municipality.</p>
-      </div>
-
-
-      <div class="content-footer-bottom">
-        <div class="footer-bottom-inner">
-            <p>©2025 All rights reserved.</p>
-        <div class="policy-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of use</a>
-          <a href="#">Site Maps</a>
-        </div>
-        <div class="icons">
-            <a href="#"><img src="images/facebook.png" alt="facebook"></a>
-            <a href="#"><img src="images/instagram.png" alt="instagram"></a>
-            <a href="#"><img src="images/email.png" alt="email"></a>
-        </div>
-       </div>
-      </div> 
-    </div>
-</footer>
 </body>
 </html>
