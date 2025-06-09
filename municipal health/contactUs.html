@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Fifth Medical Center</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f9f9f9;
+      }
+
+      header,
+      footer {
+        background-color: #007f5f;
+        color: white;
+        padding: 20px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .hero {
+        background-color: #99d5c9;
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 40px;
+        justify-content: space-between;
+        background-image: url("/images/background.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .contact-info {
+        flex: 1 1 45%;
+        margin: 20px 0;
+      }
+
+      .contact-form {
+        flex: 1 1 45%;
+        margin: 20px 20px;
+        background-color: #99d98c;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+
+      .contact-info h3,
+      .contact-form h3 {
+        margin-bottom: 20px;
+      }
+
+      .contact-info p,
+      .contact-info a {
+        margin: 10px 0;
+        color: #333;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .contact-form button {
+        padding: 10px 20px;
+        background-color: #007f5f;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+
+      .map {
+        width: 100%;
+        height: 400px;
+        margin-top: 30px;
+      }
+
+      .social-icons {
+        margin-top: 10px;
+      }
+
+      .social-icons a {
+        color: #007f5f;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 20px;
+      }
+
+      footer {
+        margin-top: auto;
+      }
+
+      .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 40px;
+      }
+
+      .footer-top div {
+        flex: 1 1 22%;
+        margin-bottom: 20px;
+        min-width: 200px;
+      }
+
+      .footer-top h4 {
+        margin-bottom: 10px;
+      }
+
+      .footer-top a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .footer-bottom {
+        display: flex;
+        text-align: justify;
+        justify-content: space-between;
+        font-size: 14px;
+        margin: auto;
+      }
+      .footer-bottom a {
+        color: white;
+        margin: 10px 5px;
+        text-decoration: none;
+      }
+      .social-icons {
+        margin-top: 10px;
+      }
+
+      .social-icons a {
+        color: #ffffff;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div><strong>Fifth Medical Center</strong></div>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">History</a></li>
+          <li><a href="contactUs.html">Contact us</a></li>
+          <li><a href="Doctors.html">Doctors</a></li>
+          <li><a href="#">Services</a></li>
+          <li>
+            <a
+              href="#"
+              style="background: #00c38a; padding: 5px 10px; border-radius: 5px"
+              >Appointment</a
+            >
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-user"></i> Log In</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Contact Us</h1>
+      <p>
+        Welcome to the official website of the FIFTH MEDICAL CENTER — your
+        trusted partner in community health and wellness.
+      </p>
+      <p>
+        We are committed to providing affordable, accessible, and compassionate
+        healthcare services to all members of our community.
+      </p>
+    </section>
+
+    <section class="contact-container">
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Sta. Mesa - Manila</p>
+        <p><i class="fas fa-phone"></i> +123-456-7890</p>
+        <p>
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:fifthmedicalcenter@gmail.com"
+            >fifthmedicalcenter@gmail.com</a
+          >
+        </p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-google"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send us a Message</h3>
+        <form
+          action="https://docs.google.com/forms/d/e/1FAIpQLSeePagYaVI_cqfYUVcBy2PrKJxXyfyQxj9DF5aeomNJvY9J3Q/formResponse"
+          method="POST"
+          target="_blank"
+        >
+          <input
+            type="text"
+            name="entry.562049628"
+            placeholder="Name"
+            required
+          />
+          <input
+            type="email"
+            name="entry.1512699300"
+            placeholder="Email Address"
+            required
+          />
+          <textarea
+            name="entry.1038523688"
+            rows="5"
+            placeholder="Message"
+            required
+          ></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.4939547899254!2d121.01496461483935!3d14.59951298980225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9dc7f65b0e9%3A0x3b4a78e9631aa405!2sSanta%20Mesa%2C%20Manila%2C%201006%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1622019041864!5m2!1sen!2sph"
+        width="100%"
+        height="100%"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <footer>
+      <div class="footer-top">
+        <div>
+          <h4>Fifth Medical Center</h4>
+          <p>Dedicated in our own Citizens</p>
+        </div>
+        <div>
+          <h4>Mission</h4>
+          <p>
+            To promote the preventive health care and well-being of our
+            community through quality health services, health education, and
+            affordable care.
+          </p>
+        </div>
+        <div>
+          <h4>Vision</h4>
+          <p>
+            A healthy, balanced, and empowered community where everyone has
+            access to safe, fair, and essential health services in our whole
+            municipality.
+          </p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <p><a href="#">About</a></p>
+          <p><a href="#">History</a></p>
+          <p><a href="#">Services</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 All rights reserved.
+        <a href="#">Privacy Policy</a> <a href="#">Terms of Use</a>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-google"></i></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
