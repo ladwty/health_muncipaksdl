@@ -1,18 +1,16 @@
 // Utility
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+function openModal(id) {
+  document.getElementById(id).style.display = 'block';
+}
+
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Generic modal control
-function openModal(id) {
-  document.getElementById('backdrop').style.display = 'block';
-  document.getElementById(id).style.display = 'block';
-}
-
-function closeModal(id) {
-  document.getElementById('backdrop').style.display = 'none';
-  document.getElementById(id).style.display = 'none';
-}
 
 // --- New Patient ---
 function goToNewPatientStep2() {
@@ -79,25 +77,25 @@ function goBackToReferringPhysicianStep2() {
 
 
 // --- LABORATORY TEST ---
-function goToReferringPhysicianStep2() {
+function goTolabtest2() {
   closeModal('modal-labtest');
   openModal('modal-labtest2');
   scrollToTop();
 }
 
-function goBackToReferringPhysicianStep1() {
+function goBackTolabtest1() {
   closeModal('modal-labtest2');
   openModal('modal-labtest');
   scrollToTop();
 }
 
-function goToReferringPhysicianStep3() {
+function goTolabtest3() {
   closeModal('modal-labtest2');
   openModal('modal-labtest3');
   scrollToTop();
 }
 
-function goBackToReferringPhysicianStep2() {
+function goBackTolabtest2() {
   closeModal('modal-labtest3');
   openModal('modal-labtest2');
   scrollToTop();
