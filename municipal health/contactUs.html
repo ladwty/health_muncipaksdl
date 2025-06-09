@@ -3,67 +3,216 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us - Fifth Medical Center</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
     <style>
+
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        font-family: Arial, sans-serif;
+        font-family: Inter, sans-serif;
       }
 
       body {
         background-color: #f9f9f9;
       }
 
-      header,
-      footer {
-        background-color: #007f5f;
-        color: white;
-        padding: 20px;
+      .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: relative;
       }
 
-      nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-      nav ul {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-      }
+.logo span {
+  font-size: 22px;
+  font-weight: bold;
+  color: #187b5d;
+}
 
-      nav ul li a {
-        color: white;
-        text-decoration: none;
-      }
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.nav-links li {
+  position: relative;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  display: block;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+
+.nav-links a:hover {
+  background-color: #3faf99;
+  color: #fff;
+  border-radius: 0.3rem;
+}
+
+.drop-down {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background: #3faf99;
+  border-radius: 7px;
+  font-size: 17px;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  z-index: 999;
+  min-width: 160px;
+}
+
+.nav-link:hover .drop-down {
+  display: block;
+}
+
+.drop-down li {
+  padding: 0.5rem 1rem;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.arrow {
+  font-size: 1.07em;
+  margin-left: 5px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn img.icon {
+  width: 25px;   
+  height: 25px;
+  margin-right: 8px;      
+  vertical-align: middle;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+ 
+.appointment-btn {
+  background-color: #3faf99;
+  color: white;
+  font-size: 18px;
+}
+
+.appointment-btn:hover {
+  background-color: #2f8c74;
+}
+
+.login-btn {
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 18px;
+  transition: 0.3 ease-out;
+}
+
+.login-btn:hover {
+  background-color:#3faf99;
+  color: #FFF;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    z-index: 1000;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-buttons {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+}
+
+.appointment-btn {
+  background-color: #18a88f;
+  color: white !important;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
 
       .hero {
-        background-color: #99d5c9;
+        background: #A6D3C0;
         text-align: center;
+        box-shadow: 0px 25px 76px 0px rgba(152, 190, 174, 0.70);
         padding: 40px 20px;
       }
 
       .contact-container {
         display: flex;
         flex-wrap: wrap;
-        padding: 40px;
+        padding: 50px;
         justify-content: space-between;
-        background-image: url("/images/background.png");
+        background-image: url("images/86d1d93bb8a9a135a63e799b85efad0ca1c1a540.png");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        
       }
 
       .contact-info {
         flex: 1 1 45%;
-        margin: 20px 0;
+        margin: 30px 0;
       }
 
       .contact-form {
@@ -72,7 +221,7 @@
         background-color: #99d98c;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
+        padding: 40px;
       }
 
       .contact-info h3,
@@ -106,7 +255,6 @@
       .map {
         width: 100%;
         height: 400px;
-        margin-top: 30px;
       }
 
       .social-icons {
@@ -120,87 +268,174 @@
         font-size: 20px;
       }
 
-      footer {
-        margin-top: auto;
-      }
+      /*footer*/
+footer{
+  background-color: #187B5D;
+  color: #ffffff;
+  padding: 40px 80px;
+}
 
-      .footer-top {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 40px;
-      }
+.container-footer{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-      .footer-top div {
-        flex: 1 1 22%;
-        margin-bottom: 20px;
-        min-width: 200px;
-      }
+.logo{
+  padding: 0px 10px ;
+  align-content: center;
+}
+.content-footer-left .content-footer-center .content-footer-right{
+  flex: 1;
+  min-width: 250px;
+}
 
-      .footer-top h4 {
-        margin-bottom: 10px;
-      }
+.logo-info{
+  display: flex;
+  flex-direction: column;
+}
 
-      .footer-top a {
-        color: white;
-        text-decoration: none;
-      }
+.content-footer-left{
+  display: flex;
+  align-items: center;
+}
 
-      .footer-bottom {
-        display: flex;
-        text-align: justify;
-        justify-content: space-between;
-        font-size: 14px;
-        margin: auto;
-      }
-      .footer-bottom a {
-        color: white;
-        margin: 10px 5px;
-        text-decoration: none;
-      }
-      .social-icons {
-        margin-top: 10px;
-      }
+.content-footer-left h2 {
+  font-size: 25px;
+  margin: 10px 0 5px;
+}
 
-      .social-icons a {
-        color: #ffffff;
-        margin: 0 10px;
-        text-decoration: none;
-        font-size: 20px;
-      }
+.content-footer-left p {
+  font-size: 14px;
+}
+
+.content-footer-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.content-footer-center h3 {
+  font-size: 20px;
+  margin-top: 15px;
+  color: #a0e3d3;
+}
+
+.content-footer-center p {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.content-footer-right .footer-links {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.content-footer-right .footer-links li {
+  margin-bottom: 8px;
+}
+
+.content-footer-right .footer-links a {
+  color: #a0e3d3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.icons a {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.icons img {
+  width: 24px;
+  height: 24px;
+}
+
+.content-footer-bottom {
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 14px;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.policy-links {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2px;
+}
+
+.policy-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.icon{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.icons a img {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+}
     </style>
   </head>
   <body>
-    <header>
-      <nav>
-        <div><strong>Fifth Medical Center</strong></div>
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">History</a></li>
-          <li><a href="contactUs.html">Contact us</a></li>
-          <li><a href="Doctors.html">Doctors</a></li>
-          <li><a href="#">Services</a></li>
-          <li>
-            <a
-              href="#"
-              style="background: #00c38a; padding: 5px 10px; border-radius: 5px"
-              >Appointment</a
-            >
-          </li>
-          <li>
-            <a href="#"><i class="fas fa-user"></i> Log In</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <header class="navbar">
+    <a href="landingpage.html">
+    <div class="logo">
+      <img src="images/Group 8.svg" alt="Logo" /> </a>
+      <div style="text-align: center; color: #187B5D;">
+        <h2 style="margin: 0; font-size: 22px;">Medical Center of Tandang Sora</h2>
+        <p style="font-size: 20px; margin: 0; margin-top: 5px; font-weight: 500;">City of Quezon</p>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li class="nav-link"><a href="about.html">About</a></li>
+        <li class="nav-link"><a href="#">History <span class="arrow">&#9662</span></a>
+          <ul class="drop-down">
+            <li><a href="General CheckUp_History.html">General Check-Up</a></li>
+            <li><a href="History_vaccination.html">Vaccination</a></li>
+            <li><a href="chest_xray.html">Chest X-Ray</a></li>
+            <li><a href="body_mass.html">Body Mass Index Result</a></li>
+            <li><a href="Counseling_session.html">counseling-session</a></li>
+            <li><a href="hiv_testing_history.html">HIV Testing Result</a></li>
+            <li><a href="blood_pressure_history.html">Blood Pressure & Sugar Testing</a></li>
+          </ul>
+        </li>
+        <li class="nav-link"><a href="contactUs.html">Contact Us</a></li>
+        <li class="nav-link"><a href="Doctors.html">Doctors</a></li>
+        <li class="nav-link"><a href="Services.html">Services</a></li>
+      </ul>
+    </nav>
+    <div class="nav-buttons">
+      <a href="appointmentform.html" class="btn appointment-btn">Appointment</a>
+      <a href="LogIn.html" class="btn login-btn"><img src="images/user.png" class="icon"> Log In</a>
+    </div>
+  </header>
 
     <section class="hero">
-      <h1>Contact Us</h1>
-      <p>
-        Welcome to the official website of the FIFTH MEDICAL CENTER — your
+      <h1 style="color: #187B5D; margin-bottom: 10px; font-size: 28px;">Contact Us</h1>
+      <p style="color: #215a4e; font-weight: 600;">
+        Welcome to the official website of the MEDICAL CENTER OF TANDANG SORA — your
         trusted partner in community health and wellness.
       </p>
-      <p>
+      <p style="color: #215a4e; font-weight: 600;">
         We are committed to providing affordable, accessible, and compassionate
         healthcare services to all members of our community.
       </p>
@@ -209,12 +444,12 @@
     <section class="contact-container">
       <div class="contact-info">
         <h3>Get In Touch</h3>
-        <p><i class="fas fa-map-marker-alt"></i> Sta. Mesa - Manila</p>
+        <p><i class="fas fa-map-marker-alt"></i> Medical Center of Tandang Sora</p>
         <p><i class="fas fa-phone"></i> +123-456-7890</p>
         <p>
           <i class="fas fa-envelope"></i>
           <a href="mailto:fifthmedicalcenter@gmail.com"
-            >fifthmedicalcenter@gmail.com</a
+            >MedicalCenterTandangSora@gmail.com</a
           >
         </p>
         <div class="social-icons">
@@ -256,7 +491,7 @@
 
     <div class="map">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.4939547899254!2d121.01496461483935!3d14.59951298980225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9dc7f65b0e9%3A0x3b4a78e9631aa405!2sSanta%20Mesa%2C%20Manila%2C%201006%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1622019041864!5m2!1sen!2sph"
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.715120249788!2d121.04779001037342!3d14.672101775263554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b6d796bae16d%3A0x7d9af97b6189b096!2sTandang%20Sora%20Ave%2C%20Quezon%20City%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1749492608291!5m2!1sen!2sph"
         width="100%"
         height="100%"
         style="border: 0"
@@ -266,44 +501,45 @@
       ></iframe>
     </div>
 
-    <footer>
-      <div class="footer-top">
-        <div>
-          <h4>Fifth Medical Center</h4>
-          <p>Dedicated in our own Citizens</p>
-        </div>
-        <div>
-          <h4>Mission</h4>
-          <p>
-            To promote the preventive health care and well-being of our
-            community through quality health services, health education, and
-            affordable care.
-          </p>
-        </div>
-        <div>
-          <h4>Vision</h4>
-          <p>
-            A healthy, balanced, and empowered community where everyone has
-            access to safe, fair, and essential health services in our whole
-            municipality.
-          </p>
-        </div>
-        <div>
-          <h4>Quick Links</h4>
-          <p><a href="#">About</a></p>
-          <p><a href="#">History</a></p>
-          <p><a href="#">Services</a></p>
-        </div>
+    <!--Footer to-->
+  <footer>
+  <div class="container-footer">
+    <div class="content-footer-left">
+      <img src="images/Group 8.svg" alt="Logo" class="logo">
+      <div class="logo-info">
+        <h2 style="color:#6BD0A6" class="logo-name">Medical Center of Tandang Sora</h2>
+              <div class="tagline"> <p>Dedicated on our own Citizens</p></div>
       </div>
-      <div class="footer-bottom">
-        &copy; 2025 All rights reserved.
-        <a href="#">Privacy Policy</a> <a href="#">Terms of Use</a>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-google"></i></a>
-        </div>
+    </div>
+     
+      <div class="content-footer-center">
+        <h3>Mission</h3>
+        <p>To promote the preventive health care and well-being of our 
+          community through quality health services, health education, 
+          and affordable care.</p>
+        <h3>Vision</h3>
+        <p>A healthier, balanced, and empowered community where 
+          everyone has access to basic and essential health services
+          in our whole municipality.</p>
       </div>
-    </footer>
+
+
+      <div class="content-footer-bottom">
+        <div class="footer-bottom-inner">
+            <p>©2025 All rights reserved.</p>
+        <div class="policy-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of use</a>
+          <a href="#">Site Maps</a>
+        </div>
+        <div class="icons">
+            <a href="#"><img src="images/facebook.png" alt="facebook"></a>
+            <a href="#"><img src="images/instagram.png" alt="instagram"></a>
+            <a href="#"><img src="images/email.png" alt="email"></a>
+        </div>
+       </div>
+      </div> 
+    </div>
+</footer>
   </body>
 </html>
