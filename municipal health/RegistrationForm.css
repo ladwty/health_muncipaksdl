@@ -1,7 +1,7 @@
 
     html, body {
       height: 100%;
-      font-family: Arial, sans-serif;
+      font-family: Inter, sans-serif;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -9,18 +9,8 @@
       flex-direction: column;
     }
 
-    header {
-      background-color: #f8fcf9;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    strong{
-      color: #0c6e4f;
-    }
-    
+ 
+   
     .navbar {
       display: flex;
       justify-content: space-between;
