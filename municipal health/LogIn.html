@@ -96,7 +96,7 @@
             margin-bottom: 20px;
         }
 
-        input[type="email"],
+        input[type="text"],
         input[type="password"] {
             width: 100%;
             padding: 12px;
@@ -231,7 +231,7 @@
             <h2>Log In</h2>
             <form onsubmit="login(event)">
             <div class="form-group">
-                <input type="email" id="username" placeholder="MedicalCenterTandangSora@gmail.com" required>
+                <input type="text" id="username" placeholder="Username" required>
             </div>
         <div class="form-group">
             <input type="password" id="password" placeholder="Password" required>
@@ -241,7 +241,7 @@
             <a href="forgetpass.html" style="color: white; text-decoration: underline;">Forgot Password?</a>
         </div>
   
-        <button class="login-btn" type="submit">Log In</button>
+        <button class="login-btn" type="submit">Login</button>
 
         <button class="google-btn" type="button">
             <img src="images/google.svg" alt="Google logo">
@@ -256,7 +256,6 @@
         <div id="message" style="margin-top: 10px; color: white; text-align: center;"></div>
         </form>
 
-            <!-- Register -->
             <div class="register-now-container" style="font-family: Inter;">
                 <p>Don't have an account?</p>
                 <a href="register.html" class="register-now-btn">Register Now</a>
@@ -264,23 +263,6 @@
         </div>
     </div>
 
-<script>
-  const USERNAME = "LiechaIsidto@gmail.com";
-  const PASSWORD = "1234";
-
-  function login(event) {
-    event.preventDefault();
-
-    const user = document.getElementById("username").value;
-    const pass = document.getElementById("password").value;
-
-    if (user === USERNAME && pass === PASSWORD) {
-
-      window.location.href = "landingpage.html";
-    } else {
-      alert("❌ Invalid username or password. Please try again.");
-    }
-  }
-</script>
+<script src="login.js"></script>
 </body>
 </html>
