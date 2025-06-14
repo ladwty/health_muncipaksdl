@@ -1,11 +1,6 @@
 <?php
 session_start();
 session_destroy();
-<<<<<<< HEAD
-echo json_encode(["success" => true]);
-?>
-=======
-header("Location: login.html");
+header("Location: LogIn.html");
 exit();
 ?>
->>>>>>> 3ce005aa9126fbf314dcb11f228531cb7da7fcf3

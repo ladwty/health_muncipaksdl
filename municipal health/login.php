@@ -2,12 +2,7 @@
 session_start();
 header("Content-Type: application/json");
 
-$host = "localhost";
-$user = "root";
-$pass = "";
-$dbname = "med-center";
-
-$conn = new mysqli($host, $user, $pass, $dbname);
+$conn = new mysqli("localhost", "root", "", "med-center");
 
 if ($conn->connect_error) {
     echo json_encode(["success" => false, "message" => "Database connection failed"]);
@@ -15,21 +10,23 @@ if ($conn->connect_error) {
 }
 
 $data = json_decode(file_get_contents("php://input"), true);
-$username = $data['username'];
-$password = $data['password'];
 
-$stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
-$stmt->bind_param("s", $username);
+$username = $data['username'] ?? '';
+$password = $data['password'] ?? '';
+
+// Query the users table
+$stmt = $conn->prepare("SELECT * FROM users WHERE Username = ? AND Password = ?");
+$stmt->bind_param("ss", $username, $password);
 $stmt->execute();
 $result = $stmt->get_result();
-$user = $result->fetch_assoc();
 
-if ($user && password_verify($password, $user['password'])) {
-    $_SESSION['user'] = $user['username'];
+if ($result->num_rows > 0) {
+    $_SESSION['username'] = $username; // This must match what landingpage.php checks
     echo json_encode(["success" => true, "message" => "Login successful"]);
 } else {
     echo json_encode(["success" => false, "message" => "Invalid credentials"]);
 }
 
+$stmt->close();
 $conn->close();
 ?>
