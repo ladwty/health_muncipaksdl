@@ -265,22 +265,19 @@
     </div>
 
 <script>
-  const USERNAME = "LiechaIsidto@gmail.com";
-  const PASSWORD = "1234";
-
-  function login(event) {
-    event.preventDefault();
-
-    const user = document.getElementById("username").value;
-    const pass = document.getElementById("password").value;
-
-    if (user === USERNAME && pass === PASSWORD) {
-
-      window.location.href = "landingpage.html";
-    } else {
-      alert("❌ Invalid username or password. Please try again.");
-    }
+  fetch('login.php', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ username, password })
+})
+.then(res => res.json())
+.then(data => {
+  if (data.success) {
+    alert("Login successful!");
+  } else {
+    alert(data.message);
   }
+});
 </script>
 </body>
 </html>
