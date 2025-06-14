@@ -70,7 +70,7 @@ body {
   width: 40%;
   background-color: #34a472;
   border-top-left-radius: 400px;
-  padding: 20px 80px;
+  padding: 40px 100px;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -87,6 +87,7 @@ body {
   font-size: 20px;
   margin-bottom: 15px;
   font-weight: bold;
+  padding-left: 20px;
 }
 
 .form-group {
@@ -106,13 +107,13 @@ body {
   color: #ffffff;
 }
 
-.submit-button {
+.submit-button{
   width: 100%;
   padding: 12px;
   background-color: black;
   color: white;
   border: none;
-  border-radius: 25px;
+  border-radius: 15px;
   font-weight: bold;
   cursor: pointer;
   margin-top: 10px;
