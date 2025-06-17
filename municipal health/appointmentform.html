@@ -118,47 +118,50 @@
     <button onclick="goToNewPatientStep2()">NEXT →</button>
   </div>
 
-  <!-- NEW PATIENT MODALS 2 -->
-  <div id="modal1" class="modal">
-    <button class="close-btn" onclick="closeModal('modal1')">×</button>
-    <h2>New Patient - Step 2</h2>
-    <div class="section">
-      <strong>Specialist</strong>
+<!-- NEW PATIENT MODALS 2 -->
+<div id="modal1" class="modal">
+  <button class="close-btn" onclick="closeModal('modal1')">×</button>
+  <h2>New Patient - Step 2</h2>
+
+  <!-- Specialist Selection -->
+  <div class="section">
+    <strong>Specialist</strong>
     <div class="section dropdown">
-  <select id="specialist-dropdown" name="specialist-dropdown">
-    <option value="">-- Select Specialist --</option>
-    <option value="cardiology">Cardiology</option>
-    <option value="dermatology">Dermatology</option>
-    <option value="neurology">Neurology</option>
-    <option value="orthopedics">Orthopedics</option>
-    <option value="pediatrics">Pediatrics</option>
-    <option value="pediatrics">Psychiatrist</option>
-  </select>
-</div>
+      <select id="specialist-select" name="specialist-select">
+        <option value="">-- Select Specialist --</option>
+        <option value="cardiology">Cardiology</option>
+        <option value="dermatology">Dermatology</option>
+        <option value="neurology">Neurology</option>
+        <option value="orthopedics">Orthopedics</option>
+        <option value="pediatrics">Pediatrics</option>
+        <option value="psychiatry">Psychiatrist</option>
+      </select>
     </div>
+  </div>
 
-    <div class="section">
-      <strong>Available Physician</strong>
-      <select id="specialist-dropdown" name="specialist-dropdown">
-    <option value="">-- Select Physician --</option>
-    <option value="cardiology">Dr. Liecha Isidto</option>
-    <option value="dermatology">Dr. John Joshua Perez</option>
-    <option value="neurology">Dr. Kevin Villaruz</option>
-    <option value="orthopedics">Dr. Mark Vincent Bellen</option>
-    <option value="pediatrics">Dr. Estephanie Escuejo</option>
-  </select>
-    </div>
+  <!-- Physician Selection -->
+  <div class="section">
+    <strong>Available Physician</strong>
+    <select id="physician-select" name="physician-select">
+      <option value="">-- Select Physician --</option>
+    </select>
+  </div>
+
+  <!-- Date and Time Selection -->
   <div class="section-date">
-  <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Availability &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Availability </strong>   
-  <br>
-  <div style="display: flex; gap: 130px; align-items:center; margin-top: 10px;  margin-left: 15px;  ">
-  <input type="date" id="appointment-date" name="appointment-date" 
-         style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
+    <strong>Date & Time Availability</strong>
+    <br><br>
+    <div style="display: flex; gap: 40px; align-items:center; margin-top: 10px; margin-left: 15px;">
+      <select id="date-select" style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
+        <option value="">-- Select Date --</option>
+      </select>
 
-  <input type="time" id="appointment-time" name="appointment-time" 
-         style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; margin-right: 210px;">
-</div>
-</div>
+      <select id="time-select" style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
+        <option value="">-- Select Time --</option>
+      </select>
+    </div>
+  </div>
+
     <br>
     <br>
 
@@ -177,7 +180,7 @@
   <button class="back-btn" onclick="goBackToNewPatientStep1()">← Back</button>
   <button onclick="handleNewPatientSubmit()" >Submit</button>
 </div>
-   </div>
+</div>
 
   <!-- RETURNING PATIENT MODALS -->
   <div id="modal-returning" class="modal">
@@ -231,48 +234,50 @@
 
     <button onclick="goToReturningPatientStep2()">NEXT →</button>
   </div>
+
   <!-- RETURNING PATIENT MODALS  2 -->
   <div id="modal2" class="modal">
     <button class="close-btn" onclick="closeModal('modal2')">×</button>
     <h2>Returning Patient - Step 2</h2>
-      <div class="section">
-      <strong>Specialist</strong>
+      <!-- Specialist Selection -->
+  <div class="section">
+    <strong>Specialist</strong>
     <div class="section dropdown">
-  <select id="specialist-dropdown" name="specialist-dropdown">
-    <option value="">-- Select Specialist --</option>
-    <option value="cardiology">Cardiology</option>
-    <option value="dermatology">Dermatology</option>
-    <option value="neurology">Neurology</option>
-    <option value="orthopedics">Orthopedics</option>
-    <option value="pediatrics">Pediatrics</option>
-  </select>
-</div>
+      <select id="specialist-select1" name="specialist-select1">
+        <option value="">-- Select Specialist --</option>
+        <option value="cardiology">Cardiology</option>
+        <option value="dermatology">Dermatology</option>
+        <option value="neurology">Neurology</option>
+        <option value="orthopedics">Orthopedics</option>
+        <option value="pediatrics">Pediatrics</option>
+        <option value="psychiatry">Psychiatrist</option>
+      </select>
     </div>
+  </div>
 
+  <!-- Physician Selection -->
+  <div class="section">
+    <strong>Available Physician</strong>
+    <select id="physician-select1" name="physician-select">
+      <option value="">-- Select Physician --</option>
+    </select>
+  </div>
 
-   <div class="section">
-      <strong>Available Physician</strong>
-      <select id="specialist-dropdown" name="specialist-dropdown">
-    <option value="">-- Select Physician --</option>
-    <option value="cardiology">Dr. Liecha Isidto</option>
-    <option value="dermatology">Dr. John Joshua Perez</option>
-    <option value="neurology">Dr. Kevin Villaruz</option>
-    <option value="orthopedics">Dr. Mark Vincent Bellen</option>
-    <option value="pediatrics">Dr. Estephanie Escuejo</option>
-  </select>
+  <!-- Date and Time Selection -->
+  <div class="section-date1">
+    <strong>Date & Time Availability</strong>
+    <br><br>
+    <div style="display: flex; gap: 40px; align-items:center; margin-top: 10px; margin-left: 15px;">
+      <select id="date-select1" style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
+        <option value="">-- Select Date --</option>
+      </select>
+
+      <select id="time-select1" style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
+        <option value="">-- Select Time --</option>
+      </select>
     </div>
+  </div>
 
-       <div class="section-date">
-  <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Availability &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Availability </strong>   
-  <br>
-  <div style="display: flex; gap: 130px; align-items:center; margin-top: 10px;  margin-left: 15px;  ">
-  <input type="date" id="appointment-date" name="appointment-date" 
-         style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
-
-  <input type="time" id="appointment-time" name="appointment-time" 
-         style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; margin-right: 210px;">
-</div>
-</div>
     <br>
     <br>
 
@@ -288,10 +293,11 @@
   </label>
 </div>
  <div class="button-group">
-  <button class="back-btn" onclick="goBackToReturningPatientStep1()">← Back</button>
-  <button  onclick="handleNewPatientSubmit()"  >Submit</button>
+  <button class="back-btn" onclick="goBackToNewPatientStep1()">← Back</button>
+  <button onclick="handleNewPatientSubmit()" >Submit</button>
 </div>
-</div>
+   </div>
+
 
 
 <!-- REFERRING PHYSICIANS MODAL STEP 1 -->
@@ -301,6 +307,8 @@
 
    <div class="section">
   
+
+    <!-- PAGPALITIN  -->
     <strong>Reffered To</strong>
       <select id="specialist-dropdown" name="specialist-dropdown">
     <option value="">-- Choose A Specialist  --</option>

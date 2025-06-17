@@ -106,3 +106,231 @@ function handleNewPatientSubmit() {
     window.location.href = "landingpage.html"; // Replace with your real appointment page
   }, 2000);
 }
+
+
+  const specialistSelect = document.getElementById('specialist-select');
+  const physicianSelect = document.getElementById('physician-select');
+  const dateSelect = document.getElementById('date-select');
+  const timeSelect = document.getElementById('time-select');
+
+  // Sample data (specialty → doctors → availability)
+  const data = {
+    cardiology: {
+      doctors: {
+        "Dr. Liecha Isidto": {
+          dates: ["2025-06-18", "2025-06-19", "2025-06-21"],
+          times: ["09:00", "10:00", "14:00"]
+        }
+      }
+    },
+    dermatology: {
+      doctors: {
+        "Dr. John Joshua Perez": {
+          dates: ["2025-06-18", "2025-06-20"],
+          times: ["11:00", "13:00"]
+        }
+      }
+    },
+    neurology: {
+      doctors: {
+        "Dr. Kevin Villaruz": {
+          dates: ["2025-06-19", "2025-06-22"],
+          times: ["08:30", "15:00"]
+        }
+      }
+    },
+    orthopedics: {
+      doctors: {
+        "Dr. Mark Vincent Bellen": {
+          dates: ["2025-06-18", "2025-06-21"],
+          times: ["09:30", "11:00"]
+        }
+      }
+    },
+    pediatrics: {
+      doctors: {
+        "Dr. Estephanie Escuejo": {
+          dates: ["2025-06-19", "2025-06-20"],
+          times: ["10:00", "12:00"]
+        }
+      }
+    },
+    psychiatry: {
+      doctors: {
+        "Dr. Anna Marie Santos": {
+          dates: ["2025-06-20", "2025-06-21"],
+          times: ["14:00", "16:00"]
+        }
+      }
+    }
+  };
+
+  // Utility to get weekday name
+  function isSunday(dateStr) {
+    const day = new Date(dateStr).getDay();
+    return day === 0;
+  }
+
+  // Populate physicians based on selected specialist
+  specialistSelect.addEventListener('change', () => {
+    const specialty = specialistSelect.value;
+    physicianSelect.innerHTML = `<option value="">-- Select Physician --</option>`;
+    dateSelect.innerHTML = `<option value="">-- Select Date --</option>`;
+    timeSelect.innerHTML = `<option value="">-- Select Time --</option>`;
+
+    if (specialty && data[specialty]) {
+      const doctors = data[specialty].doctors;
+      for (const doc in doctors) {
+        const opt = document.createElement("option");
+        opt.value = doc;
+        opt.textContent = doc;
+        physicianSelect.appendChild(opt);
+      }
+    }
+  });
+
+  // Populate available dates & times when physician selected
+  physicianSelect.addEventListener('change', () => {
+    const specialty = specialistSelect.value;
+    const doctor = physicianSelect.value;
+
+    dateSelect.innerHTML = `<option value="">-- Select Date --</option>`;
+    timeSelect.innerHTML = `<option value="">-- Select Time --</option>`;
+
+    if (specialty && doctor && data[specialty] && data[specialty].doctors[doctor]) {
+      const { dates, times } = data[specialty].doctors[doctor];
+
+      // Populate weekdays only (Mon–Sat)
+      dates.forEach(date => {
+        if (!isSunday(date)) {
+          const opt = document.createElement("option");
+          opt.value = date;
+          opt.textContent = new Date(date).toDateString(); // Format: Wed Jun 18 2025
+          dateSelect.appendChild(opt);
+        }
+      });
+
+      // Populate times
+      times.forEach(time => {
+        const opt = document.createElement("option");
+        opt.value = time;
+        opt.textContent = time;
+        timeSelect.appendChild(opt);
+      });
+    }
+  });
+
+// PART 2 FORM FOR PHYSICIANS
+
+const specialistSelect1 = document.getElementById('specialist-select1');
+const physicianSelect1 = document.getElementById('physician-select1');
+const dateSelect1 = document.getElementById('date-select1');
+const timeSelect1 = document.getElementById('time-select1');
+
+// Sample data (specialty → doctors → availability)
+const data1 = {
+  cardiology: {
+    doctors: {
+      "Dr. Liecha Isidto": {
+        dates: ["2025-06-18", "2025-06-19", "2025-06-21"],
+        times: ["09:00", "10:00", "14:00"]
+      }
+    }
+  },
+  dermatology: {
+    doctors: {
+      "Dr. John Joshua Perez": {
+        dates: ["2025-06-18", "2025-06-20"],
+        times: ["11:00", "13:00"]
+      }
+    }
+  },
+  neurology: {
+    doctors: {
+      "Dr. Kevin Villaruz": {
+        dates: ["2025-06-19", "2025-06-22"],
+        times: ["08:30", "15:00"]
+      }
+    }
+  },
+  orthopedics: {
+    doctors: {
+      "Dr. Mark Vincent Bellen": {
+        dates: ["2025-06-18", "2025-06-21"],
+        times: ["09:30", "11:00"]
+      }
+    }
+  },
+  pediatrics: {
+    doctors: {
+      "Dr. Estephanie Escuejo": {
+        dates: ["2025-06-19", "2025-06-20"],
+        times: ["10:00", "12:00"]
+      }
+    }
+  },
+  psychiatry: {
+    doctors: {
+      "Dr. Anna Marie Santos": {
+        dates: ["2025-06-20", "2025-06-21"],
+        times: ["14:00", "16:00"]
+      }
+    }
+  }
+};
+
+// Utility to check if a date is Sunday
+function isSunday(dateStr) {
+  const day = new Date(dateStr).getDay();
+  return day === 0;
+}
+
+// Populate physicians based on selected specialist
+specialistSelect1.addEventListener('change', () => {
+  const specialty = specialistSelect1.value;
+  physicianSelect1.innerHTML = `<option value="">-- Select Physician --</option>`;
+  dateSelect1.innerHTML = `<option value="">-- Select Date --</option>`;
+  timeSelect1.innerHTML = `<option value="">-- Select Time --</option>`;
+
+  if (specialty && data1[specialty]) {
+    const doctors = data1[specialty].doctors;
+    for (const doc in doctors) {
+      const opt = document.createElement("option");
+      opt.value = doc;
+      opt.textContent = doc;
+      physicianSelect1.appendChild(opt);
+    }
+  }
+});
+
+// Populate available dates & times when physician selected
+physicianSelect1.addEventListener('change', () => {
+  const specialty = specialistSelect1.value;
+  const doctor = physicianSelect1.value;
+
+  dateSelect1.innerHTML = `<option value="">-- Select Date --</option>`;
+  timeSelect1.innerHTML = `<option value="">-- Select Time --</option>`;
+
+  if (specialty && doctor && data1[specialty] && data1[specialty].doctors[doctor]) {
+    const { dates, times } = data1[specialty].doctors[doctor];
+
+    // Populate weekdays only (Mon–Sat)
+    dates.forEach(date => {
+      if (!isSunday(date)) {
+        const opt = document.createElement("option");
+        opt.value = date;
+        opt.textContent = new Date(date).toDateString();
+        dateSelect1.appendChild(opt);
+      }
+    });
+
+    // Populate times
+    times.forEach(time => {
+      const opt = document.createElement("option");
+      opt.value = time;
+      opt.textContent = time;
+      timeSelect1.appendChild(opt);
+    });
+  }
+});
+
