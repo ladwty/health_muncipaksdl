@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,110 +79,7 @@
   </main>
 
   <div id="backdrop" class="backdrop-blur" onclick="closeAllModals()"></div>
-
-  <!-- NEW PATIENT MODALS -->
-  <div id="modal" class="modal">
-    <button class="close-btn" onclick="closeModal('modal')">×</button>
-    <h2>New Patient</h2>
-    <div class="section">
-      <strong>In Case of Emergency</strong><br /> 
-      <strong>Contact Person Information </strong>
-      <input type="text" placeholder="First Name" />
-      <input type="text" placeholder="Last Name" />
-      <input type="text" placeholder="Relationship" />
-      <input type="text" placeholder="Phone Number" />
-    </div>
-    <div class="section">
-      <strong>Taking any medications, currently?</strong><br />
-      <label><input type="radio" name="meds" /> Yes</label>
-      <label><input type="radio" name="meds" /> No</label><br />
-      <br> 
-      <textarea placeholder="Please list medications"></textarea>
-    </div>
-    <div class="section">
-      <strong>Past medical history</strong>
-      <label><input type="checkbox" checked /> Anemia</label>
-      <label><input type="checkbox" checked /> Asthma</label>
-      <label><input type="checkbox" checked /> Bronchitis</label>
-      <label><input type="checkbox" checked /> Chickenpox</label>
-      <label><input type="checkbox" /> Diabetes</label>
-      <br><br>
-    <input type="text" placeholder="Others: ">
-    </div>
-    <div class="section">
-      <strong>Do you smoke?</strong>
-      <label><input type="radio" name="smoke" /> Yes</label>
-      <label><input type="radio" name="smoke" /> No</label>
-      <label><input type="radio" name="smoke" /> Occasionally</label><br>
-      <br>
-<input type="text" placeholder="Others: ">
-    </div>
-    <button onclick="goToNewPatientStep2()">NEXT →</button>
-  </div>
-
-<!-- NEW PATIENT MODALS 2 -->
-<div id="modal1" class="modal">
-  <button class="close-btn" onclick="closeModal('modal1')">×</button>
-  <h2>New Patient - Step 2</h2>
-
-  <!-- Specialist Selection -->
-  <div class="section">
-    <strong>Specialist</strong>
-    <div class="section dropdown">
-      <select id="specialist-select" name="specialist-select">
-        <option value="">-- Select Specialist --</option>
-        <option value="cardiology">Cardiology</option>
-        <option value="dermatology">Dermatology</option>
-        <option value="neurology">Neurology</option>
-        <option value="orthopedics">Orthopedics</option>
-        <option value="pediatrics">Pediatrics</option>
-        <option value="psychiatry">Psychiatrist</option>
-      </select>
-    </div>
-  </div>
-
-  <!-- Physician Selection -->
-  <div class="section">
-    <strong>Available Physician</strong>
-    <select id="physician-select" name="physician-select">
-      <option value="">-- Select Physician --</option>
-    </select>
-  </div>
-
-  <!-- Date and Time Selection -->
-  <div class="section-date">
-    <strong>Date & Time Availability</strong>
-    <br><br>
-    <div style="display: flex; gap: 40px; align-items:center; margin-top: 10px; margin-left: 15px;">
-      <select id="date-select" style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
-        <option value="">-- Select Date --</option>
-      </select>
-
-      <select id="time-select" style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
-        <option value="">-- Select Time --</option>
-      </select>
-    </div>
-  </div>
-
-    <br>
-    <br>
-
-<div style="display: flex; gap: 10px; align-items: flex-start; margin-top: 10px;">
-  <label class="custom-checkbox">
-    <input type="checkbox" id="confirm-appointment" name="confirm-appointment">
-    <span class="checkmark"></span>
-  </label>
-  <label for="confirm-appointment" style="font-size: 1 em; text-align: justify; font-family: 'Times New Roman', Times, serif; ">
-    Your personal and medical information is confidential and will only be used for your care and clinic-related purposes.
-    We will not share your data with any third party without your explicit consent, except as required by law or for referred
-    medical treatment. By checking this box, you agree to the responsible and secure use of your information.
-  </label>
-</div>
- <div class="button-group">
-  <button class="back-btn" onclick="goBackToNewPatientStep1()">← Back</button>
-  <button onclick="handleNewPatientSubmit()" >Submit</button>
-</div>
-</div>
+asa
 
   <!-- RETURNING PATIENT MODALS -->
   <div id="modal-returning" class="modal">
@@ -525,7 +424,6 @@
     medical treatment. By checking this box, you agree to the responsible and secure use of your information.
   </label>
 </div>
-
 
 <div class="button-group">
   <button class="back-btn" onclick="goBackTolabtest2()">← Back</button>
