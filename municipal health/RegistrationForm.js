@@ -98,6 +98,8 @@ function goBackTolabtest2() {
   scrollToTop();
 }
 
+
+
 // --- New Patient Submission ---
 function handleNewPatientSubmit() {
   closeModal('modal1');
@@ -220,6 +222,9 @@ function handleNewPatientSubmit() {
     }
   });
 
+
+
+
 // PART 2 FORM FOR PHYSICIANS
 
 const specialistSelect1 = document.getElementById('specialist-select1');
@@ -334,3 +339,80 @@ physicianSelect1.addEventListener('change', () => {
   }
 });
 
+
+
+
+
+// PART 3 REFERRING  FORM FOR PHYSICIANS
+
+const specialistSelect2 = document.getElementById('specialist-select2');
+const physicianSelect2 = document.getElementById('physician-select2');
+
+// Sample data (specialty → doctors → availability)
+const data2 = {
+  cardiology: {
+    doctors: {
+      "Dr. Liecha Isidto": {
+        dates: ["2025-06-18", "2025-06-19", "2025-06-21"],
+        times: ["09:00", "10:00", "14:00"]
+      }
+    }
+  },
+  dermatology: {
+    doctors: {
+      "Dr. John Joshua Perez": {
+        dates: ["2025-06-18", "2025-06-20"],
+        times: ["11:00", "13:00"]
+      }
+    }
+  },
+  neurology: {
+    doctors: {
+      "Dr. Kevin Villaruz": {
+        dates: ["2025-06-19", "2025-06-22"],
+        times: ["08:30", "15:00"]
+      }
+    }
+  },
+  orthopedics: {
+    doctors: {
+      "Dr. Mark Vincent Bellen": {
+        dates: ["2025-06-18", "2025-06-21"],
+        times: ["09:30", "11:00"]
+      }
+    }
+  },
+  pediatrics: {
+    doctors: {
+      "Dr. Estephanie Escuejo": {
+        dates: ["2025-06-19", "2025-06-20"],
+        times: ["10:00", "12:00"]
+      }
+    }
+  },
+  psychiatry: {
+    doctors: {
+      "Dr. Anna Marie Santos": {
+        dates: ["2025-06-20", "2025-06-21"],
+        times: ["14:00", "16:00"]
+      }
+    }
+  }
+};
+
+// Populate physicians based on selected specialist
+specialistSelect2.addEventListener('change', () => {
+  const specialty = specialistSelect2.value;
+  physicianSelect2.innerHTML = `<option value="">-- Select Physician --</option>`;
+
+
+  if (specialty && data1[specialty]) {
+    const doctors = data1[specialty].doctors;
+    for (const doc in doctors) {
+      const opt = document.createElement("option");
+      opt.value = doc;
+      opt.textContent = doc;
+      physicianSelect2.appendChild(opt);
+    }
+  }
+});

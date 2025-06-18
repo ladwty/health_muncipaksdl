@@ -186,45 +186,36 @@
   <div id="modal-returning" class="modal">
     <button class="close-btn" onclick="closeModal('modal-returning')">×</button>
     <h2>Returning Patient Request</h2>
-    <div class="section">
-  <strong>Primary Care Physician</strong>
-       <select id="specialist-dropdown" name="specialist-dropdown">
-    <option value="">-- Select Physician --</option>
-    <option value="cardiology">Dr. Liecha Isidto</option>
-    <option value="dermatology">Dr. John Joshua Perez</option>
-    <option value="neurology">Dr. Kevin Villaruz</option>
-    <option value="orthopedics">Dr. Mark Vincent Bellen</option>
-    <option value="pediatrics">Dr. Estephanie Escuejo</option>
-  </select>
-    </div>
+
     <div class="section">
       <strong>Current Medications </strong>
       <textarea placeholder="Please list medications"></textarea>
     </div>
- <div class="section">
-    <strong>Allergies</strong>
-    <div class="allergy-list">
-      <h4 style="padding-left: 50px;">Food </h4>       <h4 style="padding-left: 230px;">Medicine </h4>
 
-      <br>
-      <label><input type="checkbox" checked /> Milk</label>
-      <label><input type="checkbox" checked /> Egg</label>
-      <label><input type="checkbox" checked /> Peanuts</label>
-      <label><input type="checkbox" checked /> Seafood </label>
-      <label><input type="checkbox" /> Diabetes</label>
-
-
-
- <label><input type="checkbox" checked /> Penicillin and other antibiotics</label>
-      <label><input type="checkbox" checked /> Sulfa drugs (Sulfonamides)</label>
-      <label><input type="checkbox" checked /> Aspirin and NSAIDs</label>
-      <label><input type="checkbox" checked /> Anticonvulsants</label>
-      <label><input type="checkbox" /> Local anesthetics</label>
-      <br>
-
+<div class="section">
+  <strong>Allergies</strong>
+  <div class="allergy-list">
+    <div class="allergy-columns">
+      <div class="allergy-column">
+        <h4>Food</h4>
+        <label><input type="checkbox" checked /> Milk</label>
+        <label><input type="checkbox" checked /> Peanuts</label>
+        <label><input type="checkbox" /> Diabetes</label>
+        <label><input type="checkbox" checked /> Egg</label>
+        <label><input type="checkbox" checked /> Sea Foods </label>
+      </div>
+      <div class="allergy-column">
+        <h4>Medicine</h4>
+        <label><input type="checkbox" checked /> Sulfa drugs (Sulfonamides)</label>
+        <label><input type="checkbox" checked /> Anticonvulsants</label>
+        <label><input type="checkbox" checked /> Penicillin and other antibiotics</label>
+        <label><input type="checkbox" checked /> Aspirin and NSAIDs</label>
+        <label><input type="checkbox" /> Local anesthetics</label>
+      </div>
     </div>
-    <input type="text" id="section" name="section" placeholder="Other allergies..." />
   </div>
+  <input type="text" id="section" name="section" placeholder="Other allergies..." />
+</div>
 
     <div class="section">
       <strong>Recent Health Concern </strong><br />
@@ -305,33 +296,31 @@
   <button class="close-btn" onclick="closeModal('modal-referring')">×</button>
   <h2>Referring Physicians</h2>
 
-   <div class="section">
-  
-
-    <!-- PAGPALITIN  -->
-    <strong>Reffered To</strong>
-      <select id="specialist-dropdown" name="specialist-dropdown">
-    <option value="">-- Choose A Specialist  --</option>
-    <option value="cardiology">Dr. Liecha Isidto</option>
-    <option value="dermatology">Dr. John Joshua Perez</option>
-    <option value="neurology">Dr. Kevin Villaruz</option>
-    <option value="orthopedics">Dr. Mark Vincent Bellen</option>
-    <option value="pediatrics">Dr. Estephanie Escuejo</option>
-  </select>
-    </div>
-
-   <div class="section">
+         <!-- Specialist Selection -->
+  <div class="section">
+    <strong>Specialist</strong>
     <div class="section dropdown">
-  <select id="specialist-dropdown" name="specialist-dropdown">
-    <option value="">-- Select Specialist --</option>
-    <option value="cardiology">Cardiology</option>
-    <option value="dermatology">Dermatology</option>
-    <option value="neurology">Neurology</option>
-    <option value="orthopedics">Orthopedics</option>
-    <option value="pediatrics">Pediatrics</option>
-  </select>
-</div>
-</div>
+      <select id="specialist-select2" name="specialist-select2">
+        <option value="">-- Select Specialist --</option>
+        <option value="cardiology">Cardiology</option>
+        <option value="dermatology">Dermatology</option>
+        <option value="neurology">Neurology</option>
+        <option value="orthopedics">Orthopedics</option>
+        <option value="pediatrics">Pediatrics</option>
+        <option value="psychiatry">Psychiatrist</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Physician Selection -->
+  <div class="section">
+    <strong>Available Physician</strong>
+    <select id="physician-select2" name="physician-select2">
+      <option value="">-- Select Physician --</option>
+    </select>
+  </div>
+   <strong>Email</strong> 
+   <br><br>
  <input type="text" placeholder="Email" />
 
 
@@ -551,7 +540,7 @@
     <div class="content-footer-left">
       <img src="images/Group 8.svg" alt="Logo" class="logo">
       <div class="logo-info">
-        <h2 style="color:#6BD0A6" class="logo-name">Medical Center of Tandang Sora</h2>
+         <h2 style="color:#6BD0A6" class="logo-name">Medical Center of Tandang Sora</h2>
               <div class="tagline"> <p>Dedicated on our own Citizens</p></div>
       </div>
     </div>
