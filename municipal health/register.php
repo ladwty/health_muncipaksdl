@@ -1,42 +1,35 @@
+<?php
+header('Content-Type: application/json');
 include 'db.php';
-$data = json_decode(file_get_contents("php://input"), true);
 
-// Step 1: Insert into users
-$username = $data['username'];
-$password = password_hash($data['password'], PASSWORD_DEFAULT);
-$role = $data['role'];
+$raw = file_get_contents("php://input");
+$data = json_decode($raw, true);
 
-$stmt = $conn->prepare("INSERT INTO users (username, password, role) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $username, $password, $role);
-
-if ($stmt->execute()) {
-    $user_id = $stmt->insert_id; // Get inserted user ID
-
-    // Step 2: Insert into user_profiles
-    $stmt2 = $conn->prepare("INSERT INTO user_profiles 
-        (user_id, first_name, middle_name, last_name, birthdate, sex, address, contact)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt2->bind_param("isssssss",
-        $user_id,
-        $data['first_name'],
-        $data['middle_name'],
-        $data['last_name'],
-        $data['birthdate'],
-        $data['sex'],
-        $data['address'],
-        $data['contact']
-    );
-
-    if ($stmt2->execute()) {
-        echo json_encode(["success" => true, "message" => "Registered successfully"]);
-    } else {
-        echo json_encode(["success" => false, "message" => "Profile creation failed"]);
-    }
-
-    $stmt2->close();
-} else {
-    echo json_encode(["success" => false, "message" => "Username may already exist"]);
+if (!$data) {
+    file_put_contents("debug.txt", "Invalid JSON received: $raw\n", FILE_APPEND);
+    echo json_encode(["success" => false, "message" => "No valid data received."]);
+    exit;
 }
 
-$stmt->close();
-$conn->close();
+$first = $data['firstName'] ?? '';
+$middle = $data['middleName'] ?? '';
+$last = $data['lastName'] ?? '';
+$birth = $data['birthdate'] ?? '';
+$sex = $data['sex'] ?? '';
+$address = $data['address'] ?? '';
+$username = $data['username'] ?? '';
+$password = password_hash(trim($data['password']), PASSWORD_DEFAULT);
+$contact = $data['contact'] ?? '';
+
+file_put_contents("debug.txt", json_encode($data, JSON_PRETTY_PRINT) . "\n", FILE_APPEND);
+
+$stmt = $conn->prepare("INSERT INTO usersregister (first_name, middle_name, last_name, date, sex, address, username, password, contact)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("sssssssss", $first, $middle, $last, $birth, $sex, $address, $username, $password, $contact);
+
+if ($stmt->execute()) {
+    echo json_encode(["success" => true, "message" => "Registered successfully"]);
+} else {
+    echo json_encode(["success" => false, "message" => "Registration failed: " . $stmt->error]);
+}
+?>

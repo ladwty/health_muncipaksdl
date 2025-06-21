@@ -41,19 +41,56 @@
     <h1>Register</h1>
     <div class="form-box">
       <h2 class="user-title">User Information</h2>
-      <div class="form-group"><input type="text" placeholder="First Name"></div>
-      <div class="form-group"><input type="text" placeholder="Middle Name"></div>
-      <div class="form-group"><input type="text" placeholder="Last Name"></div>
-      <div class="form-group"><input type="date" placeholder="Birthdate"></div>
-      <div class="form-group"><input type="text" placeholder="Sex"></div>
-      <div class="form-group"><input type="text" placeholder="Permanent Address"></div>
-      <div class="form-group"><input type="text" placeholder="Create Username"></div>
-      <div class="form-group"><input type="text" placeholder="Create Password"></div>
-      <div class="form-group"><input type="text" placeholder="Contact Number"></div>
-      <button class="submit-button">Finish</button>
+      <div class="form-group"><input type="text" id="firstName" placeholder="First Name"></div>
+      <div class="form-group"><input type="text" id="middleName" placeholder="Middle Name"></div>
+      <div class="form-group"><input type="text" id="lastName" placeholder="Last Name"></div>
+      <div class="form-group"><input type="date" id="birthdate" placeholder="Birthdate"></div>
+      <div class="form-group"><input type="text" id="sex" placeholder="Sex"></div>
+      <div class="form-group"><input type="text" id="address" placeholder="Permanent Address"></div>
+      <div class="form-group"><input type="text" id="username" placeholder="Create Username"></div>
+      <div class="form-group"><input type="password" id="password" placeholder="Create Password"></div>
+      <div class="form-group"><input type="text" id="contact" placeholder="Contact Number"></div>
+      <button class="submit-button" id="finishBtn" type="button">Finish</button>
     </div>
   </div>
 </div>
+<!--AYOSIN YONG FINISH BUTTON NG REGISTER DI MAPINDOT AYAW MAG PAPINDOT-->
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("finishBtn").addEventListener("click", function () {
+      const data = {
+        firstName: document.getElementById("firstName").value,
+        middleName: document.getElementById("middleName").value,
+        lastName: document.getElementById("lastName").value,
+        birthdate: document.getElementById("birthdate").value,
+        sex: document.getElementById("sex").value,
+        address: document.getElementById("address").value,
+        username: document.getElementById("username").value,
+        password: document.getElementById("password").value,
+        contact: document.getElementById("contact").value,
+      };
+
+      console.log("Sending data to PHP:", data);
+
+      fetch("register.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+        .then(res => res.json())
+        .then(res => {
+          alert(res.message);
+          if (res.success) {
+            window.location.href = "login.html";
+          }
+        })
+        .catch(err => console.error("Error:", err));
+    });
+  });
+</script>
+
 
 </body>
 </html>

@@ -1,6 +1,10 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "med-center");
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "med-center";
 
+$conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
