@@ -1,0 +1,254 @@
+body {
+      height: 100%;
+      font-family: Inter;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      overflow-y: hidden;
+      
+}
+strong{
+    color: #0c6e4f;
+}
+
+
+.navbar {
+  background-color: #F8FFFC;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 30px;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+.nav-links li {
+  position: relative;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  display: block;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+
+.nav-links a:hover {
+  background-color: #3faf99;
+  color: #fff;
+  border-radius: 0.3rem;
+}
+
+.btn img.icon {
+  width: 25px;   
+  height: 25px;
+  margin-right: 8px;      
+  vertical-align: middle;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+ 
+.appointment-btn {
+  background-color: #3faf99;
+  color: white;
+  font-size: 18px;
+}
+
+.appointment-btn:hover {
+  background-color: #2f8c74;
+}
+
+.login-btn {
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 18px;
+  transition: 0.3 ease-out;
+}
+
+.login-btn:hover {
+  background-color:#3faf99;
+  color: #FFF;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    z-index: 1000;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-buttons {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+}
+
+.appointment-container {
+    margin-top: -3%;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.dashboard-header{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.dashboard-title{
+    color: #187B5D;
+    font-family: Inter;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.dashboard-admin-title{
+    display: flex;
+    justify-content: space-between;
+    color: #187B5D;
+    font-family: Inter;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+    
+
+    main.appointment-page {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4em 2em;
+      background-color: white;
+      position: relative;
+    }
+
+    .appointment-container {
+      display: flex;
+      max-width: 1000px;
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .appointment-text {
+      flex: 1;
+      min-width: 250px;
+      padding: 1em;
+    }
+
+    .appointment-text h2 {
+      color: #0c6e4f;
+      font-size: 1.8em;
+    }
+
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: pointer;
+  width: 100%;
+  margin: 20px;
+}
+
+.option h3 {
+  color: #0c6e4f;
+  font-size: 24px;
+  margin-bottom: 0.3em;
+  padding: 10px;
+}
+
+.line-with-arrow {
+  position: relative;
+  width: 60%;
+}
+
+.line-with-arrow hr {
+  border: none;
+  border-top: 1px solid #999;
+  margin: 0;
+  width: 100%;
+}
+
+.line-with-arrow span {
+  position: absolute;
+  right: 0;
+  top: -1.9em;
+  font-size: 1.3em;
+  color: #0c6e4f;
+  font-weight: 600;
+}
+
+
+
