@@ -14,25 +14,31 @@
     }
    
 .navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 30px;
-  background-color: white;
+  background-color: #F8FFFC;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: relative;
+  padding: 10px 30px;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
 }
 
-.logo span {
-  font-size: 22px;
-  font-weight: bold;
-  color: #187b5d;
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
 .nav-links {
@@ -40,7 +46,7 @@
   gap: 20px;
   list-style: none;
   margin: 0;
-  padding: 10px;
+  padding: 0;
   font-size: 18px;
 }
 
@@ -63,42 +69,6 @@
   background-color: #3faf99;
   color: #fff;
   border-radius: 0.3rem;
-}
-
-.drop-down {
-  list-style: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  display: none;
-  background: #3faf99;
-  border-radius: 7px;
-  font-size: 17px;
-  padding: 0.5rem;
-  margin-top: 0.3rem;
-  z-index: 999;
-  min-width: 160px;
-}
-
-.nav-link:hover .drop-down {
-  display: block;
-}
-
-.drop-down li {
-  padding: 0.5rem 1rem;
-  color: #fff;
-  cursor: pointer;
-  font-weight: 900;
-}
-
-.arrow {
-  font-size: 1.07em;
-  margin-left: 5px;
-}
-
-.nav-buttons {
-  display: flex;
-  gap: 15px;
 }
 
 .btn img.icon {
@@ -177,182 +147,6 @@
     flex-wrap: wrap;
   }
 }
-
-
-    .actions {
-      display: flex;
-      align-items: center;
-      gap: 1em;
-    }
-
-    .actions .appointment-btn {
-      background-color: #2ec4a3;
-      border: none;
-      padding: 0.6em 1.2em;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .actions a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-
-    main.appointment-page {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 4em 2em;
-      background-color: white;
-      position: relative;
-    }
-
-    .appointment-container {
-      display: flex;
-      max-width: 1000px;
-      width: 100%;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .appointment-text {
-      flex: 1;
-      min-width: 250px;
-      padding: 1em;
-    }
-
-    .appointment-text h2 {
-      color: #0c6e4f;
-      font-size: 1.8em;
-    }
-
-    .appointment-options {
-      flex: 1;
-      min-width: 250px;
-      padding: 1em;
-      display: flex;
-      flex-direction: column;
-      gap: 2em;
-    }
-
-    .option {
-      cursor: pointer;
-    }
-
-    .option h3 {
-      color: #0c6e4f;
-      font-size: 1.2em;
-      margin-bottom: 0.3em;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .option p {
-      font-size: 0.9em;
-      color: #333;
-      margin: 0.3em 0 0.5em;
-    }
-
-    .option hr {
-      border: none;
-      border-top: 1px solid #999;
-    }
-
-    footer {
-      background-color: #165c42;
-      color: white;
-      padding: 1.5em 1em;
-    }
-
-    .footer-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1em;
-    }
-
-    .footer-mid a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-size: 0.9em;
-    }
-
-    .footer-icons a {
-      color: white;
-      font-size: 1.4em;
-      margin-left: 10px;
-      text-decoration: none;
-    }
-
-    /* Backdrop Blur */
-    .backdrop-blur {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: rgba(128, 128, 128, 0.3);
-      backdrop-filter: blur(6px);
-      z-index: 5;
-      display: none;
-    }
-
-    /* Modal */
-    .modal {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: white;
-      padding: 2em;
-      border-radius: 10px;
-      z-index: 10;
-      width: 500px;
-      max-width: 90vw;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-      display: none;
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-
-    .modal h2 {
-      color: #0c6e4f;
-      text-align: center;
-      margin-bottom: 1.5em;
-      background-color: #0c6e4f;
-      color: white;
-      margin: -32px -32px 1.5em -32px;
-      padding: 1em;
-      border-radius: 10px 10px 0 0;
-    }
-
-    .modal input[type="text"],
-    .modal textarea {
-      width: 100%;
-      padding: 0.8em;
-      margin-bottom: 1em;
-      border: 2px solid #ddd;
-      border-radius: 4px;
-      box-sizing: border-box;
-      font-size: 14px;
-    }
-
-    .modal .section {
-      margin-bottom: 1.5em;
-    }
-
-    .modal .section strong {
-      display: block;
-      margin-bottom: 0.8em;
-      font-size: 16px;
-    }
 
     /* Two column layout for emergency contact */
     .emergency-grid {
@@ -568,108 +362,6 @@ input[type="date"] {
   font-weight: normal;
 }
 
-
-/*Footer*/
-footer{
-  background-color: #187B5D;
-  color: #ffffff;
-  padding: 40px 80px;
-  margin-top: 10%;
-}
-
-.container-footer{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.logo{
-  padding: 0px 10px ;
-  align-content: center;
-}
-.content-footer-left .content-footer-center .content-footer-right{
-  flex: 1;
-  min-width: 250px;
-}
-
-.logo-info{
-  display: flex;
-  flex-direction: column;
-}
-
-.content-footer-left{
-  display: flex;
-  align-items: center;
-}
-
-.content-footer-left h2 {
-  font-size: 25px;
-  margin: 10px 0 5px;
-}
-
-.content-footer-left p {
-  font-size: 14px;
-}
-
-.content-footer-center{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.content-footer-center h3 {
-  font-size: 20px;
-  margin-top: 15px;
-  color: #a0e3d3;
-}
-
-.content-footer-center p {
-  font-size: 13px;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-
-.icons a {
-  margin-right: 10px;
-  display: inline-block;
-}
-
-.icons img {
-  width: 24px;
-  height: 24px;
-}
-
-.content-footer-bottom {
-  margin-top: 30px;
-  padding-top: 15px;
-  font-size: 14px;
-}
-
-.footer-bottom-inner {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 100px;
-}
-
-.policy-links {
-  display: flex;
-  flex-direction: row;
-  margin-top: 2px;
-}
-
-.policy-links a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
 .icon{
   display: flex;
   justify-content: center;
@@ -712,7 +404,7 @@ footer{
       accent-color: #1a7b5d;
     }
 
-    .allergy-columns {
+.allergy-columns {
   display: flex;
   justify-content: space-between;
   gap: 40px;
@@ -736,32 +428,28 @@ footer{
 }
 
 table {
-    width: 100%;
-    border-collapse:collapse;
-    margin-top: 20px;
-    
-  border-radius: 10px; /* Adjust the value to change the roundness */
-  overflow: hidden; /* Ensures the rounded corners are visible */
-  border: 2px solid black;
+  width: 100%;
+  border-collapse:collapse;
+  margin-top: 20px;
+  border-radius: 15px 15px 0px 0px;
+  overflow: hidden; 
 }
 
- td {
-    padding: 12px;
+td {
+    padding: 18px;
     text-align: center;
-    border: 1px solid #ddd;
+    border:1px solid #333;
 }
 
 th {
-    background-color: #2C6A4B;
-    color: white;
-    font-weight: bold;
-      border: 1px solid black; /* Optional: Adds borders between the cells */
-    
+  background-color: #014A34;
+  color: white;
+  font-weight: bold;
+  padding: 17px;
 }
 
 td {
     background-color: white;
-        border: 2px solid black;
 
 }
 
@@ -790,10 +478,10 @@ button:hover {
 
 
 .containerTable{
-        margin: 0 auto;  /* Center the container */
+    margin: 0 auto;  /* Center the container */
     box-sizing: border-box;
     display: flex;
     flex-direction: column; 
-       margin-left: auto; /* Center the table horizontally */
+    margin-left: auto; /* Center the table horizontally */
     margin-right: auto; /* Center the table horizontally */
 }
