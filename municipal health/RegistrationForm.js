@@ -159,7 +159,7 @@ function handleNewPatientSubmit() {
     },
     psychiatry: {
       doctors: {
-        "Dr. Anna Marie Santos": {
+        "Dr. Irish Castillo": {
           dates: ["2025-06-20", "2025-06-21"],
           times: ["14:00", "16:00"]
         }
@@ -276,7 +276,7 @@ const data1 = {
   },
   psychiatry: {
     doctors: {
-      "Dr. Anna Marie Santos": {
+      "Dr. Irish Castillo": {
         dates: ["2025-06-20", "2025-06-21"],
         times: ["14:00", "16:00"]
       }
@@ -392,7 +392,7 @@ const data2 = {
   },
   psychiatry: {
     doctors: {
-      "Dr. Anna Marie Santos": {
+      "Dr. Irish Castillo": {
         dates: ["2025-06-20", "2025-06-21"],
         times: ["14:00", "16:00"]
       }
