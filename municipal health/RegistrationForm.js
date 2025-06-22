@@ -100,14 +100,18 @@ function goBackTolabtest2() {
 
 
 
-// --- New Patient Submission ---
-function handleNewPatientSubmit() {
-  closeModal('modal1');
-  alert("Thank you! Your appointment request has been submitted successfully.");
-  setTimeout(function () {
-    window.location.href = "landingpage.php"; // Replace with your real appointment page
-  }, 2000);
+function handleNewPatientSubmit(event) {
+    // Prevent the form from submitting
+    event.preventDefault();
+
+    // Your form handling logic here (e.g., validation, data processing)
+    console.log("Form submitted!");
+
+    // Now you can manually submit the form if needed
+    document.getElementById("newPatientForm").submit();
 }
+
+
 
 
   const specialistSelect = document.getElementById('specialist-select');

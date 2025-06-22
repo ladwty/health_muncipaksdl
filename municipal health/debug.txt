@@ -1,0 +1,11 @@
+{
+    "firstName": "mark",
+    "middleName": "l",
+    "lastName": "belen",
+    "birthdate": "2020-02-02",
+    "sex": "male",
+    "address": "2 pureza",
+    "username": "mark",
+    "password": "belen",
+    "contact": "091234567"
+}
