@@ -2,7 +2,8 @@
 include 'db.php';
 
 $medications = $_POST['medications'];
-$allergies = $_POST['allergies'];
+// Convert allergies array to comma-separated string
+$allergies = isset($_POST['allergies']) ? (is_array($_POST['allergies']) ? implode(', ', $_POST['allergies']) : $_POST['allergies']) : '';
 $otherAllergies = $_POST['other_allergies'];
 $concern = $_POST['recent_concern'];
 $specialist = $_POST['specialist'];

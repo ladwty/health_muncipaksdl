@@ -180,115 +180,103 @@
 </form>
 
   <!-- RETURNING PATIENT MODALS -->
+   <form action="returning_patient.php" method="POST" id="returningPatientForm">
+  <!-- Modal Step 1 -->
   <div id="modal-returning" class="modal">
-    <button class="close-btn" onclick="closeModal('modal-returning')">×</button>
+    <button class="close-btn" type="button" onclick="closeModal('modal-returning')">×</button>
     <h2>Returning Patient Request</h2>
-
     <div class="section">
       <strong>Current Medications </strong>
-      <textarea placeholder="Please list medications"></textarea>
+      <textarea name="medications" placeholder="Please list medications"></textarea>
     </div>
-
-<div class="section">
-  <strong>Allergies</strong>
-  <div class="allergy-list">
-    <div class="allergy-columns">
-      <div class="allergy-column">
-        <h4>Food</h4>
-        <label><input type="checkbox" checked /> Milk</label>
-        <label><input type="checkbox" checked /> Peanuts</label>
-        <label><input type="checkbox" /> Diabetes</label>
-        <label><input type="checkbox" checked /> Egg</label>
-        <label><input type="checkbox" checked /> Sea Foods </label>
+    <div class="section">
+      <strong>Allergies</strong>
+      <div class="allergy-list">
+        <div class="allergy-columns">
+          <div class="allergy-column">
+            <h4>Food</h4>
+            <label><input type="checkbox" name="allergies[]" value="Milk" /> Milk</label>
+            <label><input type="checkbox" name="allergies[]" value="Peanuts" /> Peanuts</label>
+            <label><input type="checkbox" name="allergies[]" value="Egg" /> Egg</label>
+            <label><input type="checkbox" name="allergies[]" value="Sea Foods" /> Sea Foods</label>
+          </div>
+          <div class="allergy-column">
+            <h4>Medicine</h4>
+            <label><input type="checkbox" name="allergies[]" value="Sulfa drugs" /> Sulfa drugs (Sulfonamides)</label>
+            <label><input type="checkbox" name="allergies[]" value="Anticonvulsants" /> Anticonvulsants</label>
+            <label><input type="checkbox" name="allergies[]" value="Penicillin" /> Penicillin and other antibiotics</label>
+            <label><input type="checkbox" name="allergies[]" value="Aspirin" /> Aspirin and NSAIDs</label>
+            <label><input type="checkbox" name="allergies[]" value="Local anesthetics" /> Local anesthetics</label>
+          </div>
+        </div>
       </div>
-      <div class="allergy-column">
-        <h4>Medicine</h4>
-        <label><input type="checkbox" checked /> Sulfa drugs (Sulfonamides)</label>
-        <label><input type="checkbox" checked /> Anticonvulsants</label>
-        <label><input type="checkbox" checked /> Penicillin and other antibiotics</label>
-        <label><input type="checkbox" checked /> Aspirin and NSAIDs</label>
-        <label><input type="checkbox" /> Local anesthetics</label>
-      </div>
+      <input type="text" name="other_allergies" placeholder="Other allergies..." />
     </div>
-  </div>
-  <input type="text" id="section" name="section" placeholder="Other allergies..." />
-</div>
-
     <div class="section">
       <strong>Recent Health Concern </strong><br />
-           <input type="text" placeholder="Type Here" />
-
+      <input type="text" name="recent_concern" placeholder="Type Here" />
     </div>
-
-    <button onclick="goToReturningPatientStep2()">NEXT →</button>
+    <button type="button" onclick="goToReturningPatientStep2()">NEXT →</button>
   </div>
 
-  <!-- RETURNING PATIENT MODALS  2 -->
+  <!-- Modal Step 2 -->
   <div id="modal2" class="modal">
-    <button class="close-btn" onclick="closeModal('modal2')">×</button>
+    <button class="close-btn" type="button" onclick="closeModal('modal2')">×</button>
     <h2>Returning Patient - Step 2</h2>
-      <!-- Specialist Selection -->
-  <div class="section">
-    <strong>Specialist</strong>
-    <div class="section dropdown">
-      <select id="specialist-select1" name="specialist-select1">
-        <option value="">-- Select Specialist --</option>
-        <option value="cardiology">Cardiology</option>
-        <option value="dermatology">Dermatology</option>
-        <option value="neurology">Neurology</option>
-        <option value="orthopedics">Orthopedics</option>
-        <option value="pediatrics">Pediatrics</option>
-        <option value="psychiatry">Psychiatrist</option>
+    <div class="section">
+      <strong>Specialist</strong>
+      <div class="section dropdown">
+        <select id="specialist-select1" name="specialist" required>
+          <option value="">-- Select Specialist --</option>
+          <option value="cardiology">Cardiology</option>
+          <option value="dermatology">Dermatology</option>
+          <option value="neurology">Neurology</option>
+          <option value="orthopedics">Orthopedics</option>
+          <option value="pediatrics">Pediatrics</option>
+          <option value="psychiatry">Psychiatrist</option>
+        </select>
+      </div>
+    </div>
+    <div class="section">
+      <strong>Available Physician</strong>
+      <select id="physician-select1" name="physician" required>
+        <option value="">-- Select Physician --</option>
       </select>
     </div>
-  </div>
-
-  <!-- Physician Selection -->
-  <div class="section">
-    <strong>Available Physician</strong>
-    <select id="physician-select1" name="physician-select">
-      <option value="">-- Select Physician --</option>
-    </select>
-  </div>
-
-  <!-- Date and Time Selection -->
-  <div class="section-date1">
-    <strong>Date & Time Availability</strong>
-    <br><br>
-    <div style="display: flex; gap: 40px; align-items:center; margin-top: 10px; margin-left: 15px;">
-      <select id="date-select1" style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
-        <option value="">-- Select Date --</option>
-      </select>
-
-      <select id="time-select1" style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
-        <option value="">-- Select Time --</option>
-      </select>
+    <div class="section-date1">
+      <strong>Date & Time Availability</strong>
+      <br><br>
+      <div style="display: flex; gap: 40px; align-items:center; margin-top: 10px; margin-left: 15px;">
+        <select id="date-select1" name="appointment_date" required style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
+          <option value="">-- Select Date --</option>
+        </select>
+        <select id="time-select1" name="appointment_time" required style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
+          <option value="">-- Select Time --</option>
+        </select>
+      </div>
+    </div>
+    <div style="display: flex; gap: 10px; align-items: flex-start; margin-top: 10px;">
+      <label class="custom-checkbox">
+        <input type="checkbox" id="confirm-appointment" name="confirm_appointment" required>
+        <span class="checkmark"></span>
+      </label>
+      <label for="confirm-appointment" style="font-size: 1em; text-align: justify; font-family: 'Times New Roman', Times, serif;">
+        Your personal and medical information is confidential and will only be used for your care and clinic-related purposes.
+        We will not share your data with any third party without your explicit consent, except as required by law or for referred
+        medical treatment. By checking this box, you agree to the responsible and secure use of your information.
+      </label>
+    </div>
+    <div class="button-group">
+      <button class="back-btn" type="button" onclick="goBackToReturningPatientStep1()">← Back</button>
+      <button type="submit">Submit</button>
     </div>
   </div>
-
-    <br>
-    <br>
-
-<div style="display: flex; gap: 10px; align-items: flex-start; margin-top: 10px;">
-  <label class="custom-checkbox">
-    <input type="checkbox" id="confirm-appointment" name="confirm-appointment">
-    <span class="checkmark"></span>
-  </label>
-  <label for="confirm-appointment" style="font-size: 1 em; text-align: justify; font-family: 'Times New Roman', Times, serif; ">
-    Your personal and medical information is confidential and will only be used for your care and clinic-related purposes.
-    We will not share your data with any third party without your explicit consent, except as required by law or for referred
-    medical treatment. By checking this box, you agree to the responsible and secure use of your information.
-  </label>
-</div>
- <div class="button-group">
-  <button class="back-btn" onclick="goBackToNewPatientStep1()">← Back</button>
-  <button onclick="handleNewPatientSubmit()" >Submit</button>
-</div>
-   </div>
-
-
+</form>
 
 <!-- REFERRING PHYSICIANS MODAL STEP 1 -->
+<form action="referring_physician.php" method="POST" id="referringPhysicianForm">
+
+
 <div id="modal-referring" class="modal">
   <button class="close-btn" onclick="closeModal('modal-referring')">×</button>
   <h2>Referring Physicians</h2>
@@ -297,7 +285,7 @@
   <div class="section">
     <strong>Specialist</strong>
     <div class="section dropdown">
-      <select id="specialist-select2" name="specialist-select2">
+      <select id="specialist-select2" name="specialist" required>
         <option value="">-- Select Specialist --</option>
         <option value="cardiology">Cardiology</option>
         <option value="dermatology">Dermatology</option>
@@ -312,23 +300,21 @@
   <!-- Physician Selection -->
   <div class="section">
     <strong>Available Physician</strong>
-    <select id="physician-select2" name="physician-select2">
+    <select id="physician-select2" name="physician" required>
       <option value="">-- Select Physician --</option>
     </select>
   </div>
-   <strong>Email</strong> 
-   <br><br>
- <input type="text" placeholder="Email" />
-
-
-
+    <div class="section">
+      <strong>Email</strong>
+      <input type="email" name="email" placeholder="Email" required />
+    </div>
   <div class="section">
     <strong style="text-align: center;">Patient Information </strong>
      
     <strong>Full Name</strong>
      <div class="row">
-          <input type="text" placeholder="First Name" />
-          <input type="text" placeholder="Last Name" />
+          <input type="text" name="patient_fname" placeholder="First Name" required />
+          <input type="text" name="patient_lname" placeholder="Last Name" required />
         </div>
     
 
@@ -336,53 +322,51 @@
         <div class="row">
           <div class="half-width">
             <label class="section-title">Date of Birth</label>
-            <input type="date" />
+            <input type="date" name="birthdate" required />
           </div>
           <div class="half-width sex-group">
             <label class="section-title" style="margin-left: 50px;">Sex</label>
             <div class="radio-group">
-              <label><input type="radio" name="sex" /> Male</label>
-              <label><input type="radio" name="sex" /> Female</label>
+              <label><input type="radio" name="sex" value="Male" required /> Male</label>
+              <label><input type="radio" name="sex" value="Female" /> Female</label>
               <br>
             </div>
           </div>
         </div>
       </div>
 <br>
-      <input type="text" placeholder="Phone Number" /> <br>
-      <input type="text" placeholder="Emergency Contact Person" /><br>
-      <input type="text" placeholder="Emergency Contact Number" />
-    </form>
+      <input type="text" name="phone" placeholder="Phone Number" required /> <br>
+      <input type="text" name="emergency_contact_name" placeholder="Emergency Contact Person" required /><br>
+      <input type="text" name="emergency_contact_number" placeholder="Emergency Contact Number" required />
+    </div>
+    <button type="button" onclick="goToReferringPhysicianStep2()">NEXT →</button>
   </div>
- 
-  <button onclick="goToReferringPhysicianStep2()">NEXT →</button>
-</div>
 
-<!-- REFERRING PHYSICIANS MODAL STEP 2 -->
-<div id="modal-referring2" class="modal">
+  <!-- REFERRING PHYSICIANS MODAL STEP 2 -->
+  <div id="modal-referring2" class="modal">
   <button class="close-btn" onclick="closeModal('modal-referring2')">×</button>
   <h2>Referring Physicians - Step 2</h2>
   <div class="section">
     <strong style="text-align: center;">Clinical Details</strong><br />
 
-        <strong >Diagnosis by Referring  Practitioner</strong><br />
+        <strong>Diagnosis by Referring Practitioner</strong><br />
 
-      <textarea placeholder="Type Here"></textarea>
+      <textarea name="diagnosis" placeholder="Type Here" required></textarea>
   </div>
 
   <div class="section">
     <strong>Medical History</strong><br />
-  <textarea placeholder="Type Here"></textarea>
+  <textarea name="medical_history" placeholder="Type Here" required></textarea>
   </div>
 
    <div class="section">
     <strong>Family History</strong><br />
-  <textarea placeholder="Type Here"></textarea>
+  <textarea name="family_history" placeholder="Type Here" required></textarea>
   </div>
 
 <div class="button-group">
   <button class="back-btn" onclick="goBackToReferringPhysicianStep1()">← Back</button>
-  <button  onclick="goToReferringPhysicianStep3()" >Next →</button>
+  <button type="button" onclick="goToReferringPhysicianStep3()" >Next →</button>
 </div>
 </div>
 
@@ -391,26 +375,30 @@
   <button class="close-btn" onclick="closeModal('modal-referring3')">×</button>
   <h2>Referring Physicians - Step 3</h2>
   <div class="section">
-    <strong style="text-align: center;">Clinical Details</strong><br />
+    <strong>Reason for Referral</strong><br />
 
-        <strong >Reason for Referral</strong><br />
-
-      <textarea placeholder="Type Here"></textarea>
+      <textarea name="reason_for_referral" placeholder="Type Here" required></textarea>
   </div>
 
   <div class="section">
     <strong>Additional Comments</strong><br />
-  <textarea placeholder="Type Here"></textarea>
+  <textarea name="additional_comments" placeholder="Type Here"></textarea>
   </div>
 
 <div class="button-group">
   <button class="back-btn" onclick="goBackToReferringPhysicianStep2()">← Back</button>
-  <button   onclick="handleNewPatientSubmit()" >Submit →</button>
+  <button type="submit">Submit →</button>
 </div>
 </div>
 
+   </form>
 
 
+
+
+
+
+<form action="lab_test.php" method="POST" enctype="multipart/form-data"  id="labTestForm">
 
 <!-- LAB TEST MODAL STEP 1 -->
 <div id="modal-labtest" class="modal">
@@ -420,20 +408,11 @@
    <div class="section">
   
     <strong>Upload Your  Laboratory Request </strong>
-     <div class="form-container">
-
-
-    <form action="step2.html" method="get" enctype="multipart/form-data">
-
-      <input type="file" id="lab-request" name="lab-request" accept=".jpg,.jpeg,.png,.pdf" required />
-      <div class="button-row">
-        <span></span>
-      </div>
-    </form>
+     <input type="file" id="lab-request" name="lab-request" accept=".jpg,.jpeg,.png,.pdf" required />
   </div>
-    </div>
- 
-  <button onclick="goTolabtest2()">NEXT →</button>
+  <div class="button-group">
+    <button type="button" onclick="goTolabtest2()">NEXT →</button>
+  </div>
 </div>
 
 <!-- LAB TEST MODAL STEP 2 -->
@@ -441,29 +420,30 @@
   <button class="close-btn" onclick="closeModal('modal-labtest2')">×</button>
   <h2>Lab Test Request - Step 2</h2>
   <div class="section">
-    <strong >Select Services</strong>
-     <select id="specialist-dropdown" name="specialist-dropdown">
-    <option value="cardiology">Chest X-ray</option>
-    <option value="dermatology">Counseling </option>
-    <option value="neurology">Vaccinations </option>  
-    <option value="orthopedics">General Check-ups </option>
-    <option value="pediatrics">Hiv Testing </option>
-    <option value="pediatrics">Blood Pressure and Sugar Check  </option>
-    <option value="pediatrics">Ultra Sound </option>
-  </select>
-  <br>
- <div class="section-date">
-  <br>
-  <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Availability &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Availability </strong>   
-  <div style="display: flex; gap: 150px; align-items:center; margin-top: 10px;  margin-left: 20px;  ">
-  <input type="date" id="appointment-date" name="appointment-date" 
-         style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
+    <strong>Select Services</strong>
+    <select id="service" name="service" required>
+      <option value="">-- Select Service --</option>
+      <option value="Chest X-ray">Chest X-ray</option>
+      <option value="Counseling">Counseling</option>
+      <option value="Vaccinations">Vaccinations</option>
+      <option value="General Check-ups">General Check-ups</option>
+      <option value="Hiv Testing">Hiv Testing</option>
+      <option value="Blood Pressure and Sugar Check">Blood Pressure and Sugar Check</option>
+      <option value="Ultra Sound">Ultra Sound</option>
+    </select>
+    <br>
+    <div class="section-date">
+      <br>
+      <strong>Date Availability &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Availability </strong>   
+      <div style="display: flex; gap: 150px; align-items:center; margin-top: 10px;  margin-left: 20px;  ">
+      <input type="date" id="appointment-date" name="appointment_date" 
+             style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
 
-  <input type="time" id="appointment-time" name="appointment-time" 
-         style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; margin-right: 210px;">
-</div>
-</div>
-</div>
+      <input type="time" id="appointment-time" name="appointment_time" 
+             style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; margin-right: 210px;">
+    </div>
+    </div>
+  </div>
 
   <div class="section">
     <strong>Medical Information </strong><br />
@@ -500,34 +480,34 @@
   <button class="close-btn" onclick="closeModal('modal-labtest3')">×</button>
   <h2>Lab Test Request - Step 3</h2>
   <div class="section">
-   
-        <strong >Emergency Contact</strong>
-    <input type="text" placeholder="Full Name" />
-      <input type="text" placeholder="Relationship" />
-      <input type="text" placeholder="Phone Number" />
-      
+    <strong>Emergency Contact</strong>
+    <input type="text" name="emergency_name" placeholder="Full Name" required />
+    <input type="text" name="relationship" placeholder="Relationship" required />
+    <input type="text" name="contact_number" placeholder="Phone Number" required />
   </div>
+  <div style="display: flex; gap: 10px; align-items: flex-start; margin-top: 10px;">
+    <label class="custom-checkbox">
+      <input type="checkbox" id="confirm-appointment" name="confirm-appointment" required>
+      <span class="checkmark"></span>
+    </label>
+    <label for="confirm-appointment" style="font-size: 1em; text-align: justify; font-family: 'Times New Roman', Times, serif;">
+      Your personal and medical information is confidential and will only be used for your care and clinic-related purposes.
+      We will not share your data with any third party without your explicit consent, except as required by law or for referred
+      medical treatment. By checking this box, you agree to the responsible and secure use of your information.
+    </label>
+  </div>
+  <div class="button-group">
+    <button class="back-btn" type="button" onclick="goBackTolabtest2()">← Back</button>
+    <button onclick="handleNewPatientSubmit(event)">
+  Submit →
+</button>
 
-
-
-
-<div style="display: flex; gap: 10px; align-items: flex-start; margin-top: 10px;">
-  <label class="custom-checkbox">
-    <input type="checkbox" id="confirm-appointment" name="confirm-appointment">
-    <span class="checkmark"></span>
-  </label>
-  <label for="confirm-appointment" style="font-size: 1 em; text-align: justify; font-family: 'Times New Roman', Times, serif; ">
-    Your personal and medical information is confidential and will only be used for your care and clinic-related purposes.
-    We will not share your data with any third party without your explicit consent, except as required by law or for referred
-    medical treatment. By checking this box, you agree to the responsible and secure use of your information.
-  </label>
+  </div>
 </div>
+</form>
 
-<div class="button-group">
-  <button class="back-btn" onclick="goBackTolabtest2()">← Back</button>
-  <button  onclick="handleNewPatientSubmit()" >Submit →</button>
-</div>
-</div>
+
+
 
 
 <!--FOOTER DIZ-->
