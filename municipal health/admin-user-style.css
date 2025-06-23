@@ -461,19 +461,17 @@ button {
 }
 
 .edit-btn {
-    color: #2C6A4B;
-    background-color: #e0f7e0;
-    border-radius: 5px;
+  background-color: transparent;
+  border-radius: 5px;
 }
 
 .delete-btn {
-    color: #f44336;
-    background-color: #ffcccc;
-    border-radius: 5px;
+  background-color: transparent;
+  border-radius: 5px;
 }
 
 button:hover {
-    opacity: 0.8;
+  opacity: 0.7;
 }
 
 

@@ -75,8 +75,8 @@ if (!isset($_SESSION["username"])) {
  <!-- Slider Carousel  -->
 <section class="section-bg">
   <div class="content">
-    <h2>Our Services</h2>
-    <h4>Dedicated Services for you</h4>
+    <h2>News & Services</h2>
+    <h4>Explore the latest news and events that keep our community informed</h4>
   </div>
 
   <div class="carousel-selection swiper">
@@ -84,56 +84,36 @@ if (!isset($_SESSION["username"])) {
 
       <div class="swiper-slide">
         <a href="#" class="card">
-          <img src="images/general-checkup-img.png" class="card-image">
+          <img src="images/dengue.png" class="card-image">
         </a>
       </div>
 
       <div class="swiper-slide">
         <a href="#" class="card">
-          <img src="images/freeHiv-img.png" class="card-image">
+          <img src="images/freevac.png" class="card-image">
         </a>
       </div>
 
       <div class="swiper-slide">
         <a href="#" class="card">
-          <img src="images/ultrasound-img.png" class="card-image">
+          <img src="images/maternity.png" class="card-image">
         </a>
       </div>
 
       <div class="swiper-slide">
         <a href="#" class="card">
-          <img src="images/bodymass-img.png" class="card-image">
-        </a>
-
-      </div>
-
-      <div class="swiper-slide">
-        <a href="#" class="card">
-          <img src="images/chest-xray-img.png"  class="card-image">
-        </a>
-      </div>
-
-      <div class="swiper-slide">
-        <a href="#" class="card">
-          <img src="images/blood-pressue-img.png" class="card-image">
-        </a>
-      </div>
-
-      <div class="swiper-slide">
-        <a href="#" class="card">
-          <img src="images/counseling-session.png" class="card-image">
-        </a>
-      </div>
-
-      <div class="swiper-slide">
-        <a href="#" class="card">
-          <img src="images/vaccination-img.png" class="card-image">
+          <img src="images/hivcases.png"  class="card-image">
         </a>
       </div>
     </div>
 
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
+
+    <div class="section-title">
+    <h1>EVENT</h1>
+    <h1>CALENDAR</h1>
+  </div>
 </section>
 
 <!--ETO FAQ-->
@@ -204,6 +184,13 @@ if (!isset($_SESSION["username"])) {
           in our whole municipality.</p>
       </div>
 
+      <div class="content-right-footer">
+        <h3>Hotline</h3>
+        <p>(02) 1234 5678</p>
+        <h3>Mobile Support</h3>
+        <p>0917 890 1234 (Globe)</p>
+        <p>0980 765 4321 (Smart)</p>
+      </div>
 
       <div class="content-footer-bottom">
         <div class="footer-bottom-inner">
