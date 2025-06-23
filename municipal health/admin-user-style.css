@@ -148,6 +148,42 @@
   }
 }
 
+
+/*Hero Section*/
+.hero {
+  background-color: #A6D3C0;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0px 10px 40px 0px rgba(152, 190, 174, 0.70);
+  margin-bottom: 70px;
+}
+
+.hero h1 {
+  color: #006b52;
+}
+
+.hero span {
+  color: #004d40;
+}
+
+.logo-content {
+  display: flex;
+  align-items: center;      
+  justify-content: center;                   
+  text-align: center;
+}
+
+.logo-content img.logo {
+  width: 70.948px;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.logo-name {
+  color: #116700;
+  font-size: 24px;
+  margin: 0;
+}
     /* Two column layout for emergency contact */
     .emergency-grid {
       display: grid;
