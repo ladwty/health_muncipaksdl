@@ -292,7 +292,12 @@
           if (data.success) {
             alert("✅ Login successful! Redirecting...");
             localStorage.removeItem("agreedToPrivacy");
-            window.location.href = "landingpage.php";
+
+            if (data.role === "admin") {
+              window.location.href = "dashboard-admin.html";
+            } else {
+              window.location.href = "landingpage.php"; 
+            }
           } else {
             alert("❌ " + data.message);
           }
@@ -304,6 +309,7 @@
     });
   });
 </script>
+
 
 
 
