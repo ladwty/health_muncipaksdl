@@ -61,20 +61,14 @@
           <p>Request using your patient account.</p>
           <hr/>
         </div>
-        <div class="option">
-       <div class="option" onclick="openModal('modal-referring')">
-          <h3>Referring Physicians <span>&gt;</span></h3>
-          <p>Get consults and refer your patients.</p>
-        </div>
+     
+  
           <div class="option">
        <div class="option" onclick="openModal('modal-labtest')">
-<hr/>
-<br>
           <h3>Laboratory  Test <span>&gt;</span></h3>
           <p>Comprehensive Diagnostic Solutions for Accurate Health Assessment</p>
         </div>
       </div>
-    </div>
   </main>
 
   <div id="backdrop" class="backdrop-blur" onclick="closeAllModals()"></div>
@@ -273,128 +267,6 @@
     </div>
   </div>
 </form>
-
-<!-- REFERRING PHYSICIANS MODAL STEP 1 -->
-<form action="referring_physician.php" method="POST" id="referringPhysicianForm">
-
-
-<div id="modal-referring" class="modal">
-  <button class="close-btn" onclick="closeModal('modal-referring')">×</button>
-  <h2>Referring Physicians</h2>
-
-         <!-- Specialist Selection -->
-  <div class="section">
-    <strong>Specialist</strong>
-    <div class="section dropdown">
-      <select id="specialist-select2" name="specialist" required>
-        <option value="">-- Select Specialist --</option>
-        <option value="cardiology">Cardiology</option>
-        <option value="dermatology">Dermatology</option>
-        <option value="neurology">Neurology</option>
-        <option value="orthopedics">Orthopedics</option>
-        <option value="pediatrics">Pediatrics</option>
-        <option value="psychiatry">Psychiatrist</option>
-      </select>
-    </div>
-  </div>
-
-  <!-- Physician Selection -->
-  <div class="section">
-    <strong>Available Physician</strong>
-    <select id="physician-select2" name="physician" required>
-      <option value="">-- Select Physician --</option>
-    </select>
-  </div>
-    <div class="section">
-      <strong>Email</strong>
-      <input type="email" name="email" placeholder="Email" required />
-    </div>
-  <div class="section">
-    <strong style="text-align: center;">Patient Information </strong>
-     
-    <strong>Full Name</strong>
-     <div class="row">
-          <input type="text" name="patient_fname" placeholder="First Name" required />
-          <input type="text" name="patient_lname" placeholder="Last Name" required />
-        </div>
-    
-
-      <div class="form-group">
-        <div class="row">
-          <div class="half-width">
-            <label class="section-title">Date of Birth</label>
-            <input type="date" name="birthdate" required />
-          </div>
-          <div class="half-width sex-group">
-            <label class="section-title" style="margin-left: 50px;">Sex</label>
-            <div class="radio-group">
-              <label><input type="radio" name="sex" value="Male" required /> Male</label>
-              <label><input type="radio" name="sex" value="Female" /> Female</label>
-              <br>
-            </div>
-          </div>
-        </div>
-      </div>
-<br>
-      <input type="text" name="phone" placeholder="Phone Number" required /> <br>
-      <input type="text" name="emergency_contact_name" placeholder="Emergency Contact Person" required /><br>
-      <input type="text" name="emergency_contact_number" placeholder="Emergency Contact Number" required />
-    </div>
-    <button type="button" onclick="goToReferringPhysicianStep2()">NEXT →</button>
-  </div>
-
-  <!-- REFERRING PHYSICIANS MODAL STEP 2 -->
-  <div id="modal-referring2" class="modal">
-  <button class="close-btn" onclick="closeModal('modal-referring2')">×</button>
-  <h2>Referring Physicians - Step 2</h2>
-  <div class="section">
-    <strong style="text-align: center;">Clinical Details</strong><br />
-
-        <strong>Diagnosis by Referring Practitioner</strong><br />
-
-      <textarea name="diagnosis" placeholder="Type Here" required></textarea>
-  </div>
-
-  <div class="section">
-    <strong>Medical History</strong><br />
-  <textarea name="medical_history" placeholder="Type Here" required></textarea>
-  </div>
-
-   <div class="section">
-    <strong>Family History</strong><br />
-  <textarea name="family_history" placeholder="Type Here" required></textarea>
-  </div>
-
-<div class="button-group">
-  <button class="back-btn" onclick="goBackToReferringPhysicianStep1()">← Back</button>
-  <button type="button" onclick="goToReferringPhysicianStep3()" >Next →</button>
-</div>
-</div>
-
-<!-- REFERRING PHYSICIANS MODAL STEP 3 -->
-<div id="modal-referring3" class="modal">
-  <button class="close-btn" onclick="closeModal('modal-referring3')">×</button>
-  <h2>Referring Physicians - Step 3</h2>
-  <div class="section">
-    <strong>Reason for Referral</strong><br />
-
-      <textarea name="reason_for_referral" placeholder="Type Here" required></textarea>
-  </div>
-
-  <div class="section">
-    <strong>Additional Comments</strong><br />
-  <textarea name="additional_comments" placeholder="Type Here"></textarea>
-  </div>
-
-<div class="button-group">
-  <button class="back-btn" onclick="goBackToReferringPhysicianStep2()">← Back</button>
-  <button type="submit">Submit →</button>
-</div>
-</div>
-
-   </form>
-
-
 
 
 
