@@ -169,7 +169,7 @@
 <form id="newPatientForm">
     <!-- Your form fields here -->
 
-    <button type="submit" onclick="handleNewPatientSubmit(event)">Submit</button>
+    <button type="submit">Submit</button>
 </form>
 
     </div>
@@ -373,7 +373,7 @@
   </div>
   <div class="button-group">
     <button class="back-btn" type="button" onclick="goBackTolabtest2()">← Back</button>
-    <button onclick="handleNewPatientSubmit(event)">
+    <button type="submit" > 
   Submit →
 </button>
 
@@ -381,9 +381,52 @@
 </div>
 </form>
 
+<!-- Add this modal for popup messages -->
+<div id="popupModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); z-index:9999; align-items:center; justify-content:center;">
+  <div style="background:#fff; padding:30px 40px; border-radius:10px; text-align:center; min-width:300px;">
+    <span id="popupMessage"></span><br><br>
+    <button onclick="closePopupAndRedirect()">OK</button>
+  </div>
+</div>
 
+<script>
+function showPopup(message, isSuccess) {
+  document.getElementById('popupMessage').innerText = message;
+  document.getElementById('popupModal').style.display = 'flex';
+  // Optionally, you can style the message based on isSuccess
+}
 
+function closePopupAndRedirect() {
+  document.getElementById('popupModal').style.display = 'none';
+  window.location.href = 'appointmentform.html';
+}
 
+// Attach AJAX submit for all forms
+['newPatientForm', 'returningPatientForm', 'labTestForm'].forEach(function(formId) {
+  var form = document.getElementById(formId);
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var formData = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          showPopup(data.message || "Submission successful!", true);
+        } else {
+          showPopup(data.message || "Submission failed.", false);
+        }
+      })
+      .catch(() => {
+        showPopup("Submission failed. Please try again.", false);
+      });
+    });
+  }
+});
+</script>
 
 <!--FOOTER DIZ-->
 <footer>
