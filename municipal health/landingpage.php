@@ -54,7 +54,10 @@ if (!isset($_SESSION["username"])) {
       </a>
 
     <span class="welcome-message">
-      Welcome, <span class="user-name" style="font-size:18px;"><?php echo htmlspecialchars($_SESSION['first_name']); ?>!</span>
+      Welcome, 
+      <span class="user-name" style="font-size:18px;">
+        <?php echo isset($_SESSION['first_name']) ? htmlspecialchars($_SESSION['first_name']) : 'User'; ?>!
+      </span>
     </span>
     </div>
   </header>

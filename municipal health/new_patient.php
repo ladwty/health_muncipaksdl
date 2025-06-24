@@ -75,9 +75,8 @@ if ($success) {
 } else {
     echo json_encode(['success' => false, 'message' => 'Error: ' . htmlspecialchars($stmt->error)]);
 }
-exit();
 
 // Close the statement and database connection
 $stmt->close();
 $conn->close();
-?>
+exit();

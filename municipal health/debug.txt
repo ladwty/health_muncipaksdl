@@ -1,0 +1,11 @@
+{
+    "firstName": "maloi",
+    "middleName": "Y",
+    "lastName": "Recalde",
+    "birthdate": "2002-06-10",
+    "sex": "female",
+    "address": "2 pureza",
+    "username": "maloi",
+    "password": "recalde",
+    "contact": "111111111"
+}
