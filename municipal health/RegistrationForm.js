@@ -101,7 +101,6 @@ function goBackTolabtest2() {
 
 
 function handleNewPatientSubmit(event) {
-    // Prevent the form from submitting
     event.preventDefault();
 
     // Your form handling logic here (e.g., validation, data processing)

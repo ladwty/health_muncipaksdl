@@ -15,9 +15,10 @@ $sql = "INSERT INTO returning_patients (medications, allergies, other_allergies,
 VALUES ('$medications', '$allergies', '$otherAllergies', '$concern', '$specialist', '$physician', '$appointmentDate', '$appointmentTime')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Returning patient record created.";
+    echo json_encode(['success' => true, 'message' => 'Submission successful!']);
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo json_encode(['success' => false, 'message' => 'Error: ' . $conn->error]);
 }
+exit();
 $conn->close();
 ?>
