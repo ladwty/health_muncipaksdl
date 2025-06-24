@@ -69,12 +69,15 @@ $stmt->bind_param(
 );
 
 // Execute the query and check for success
-if ($stmt->execute()) {
-    echo "New patient record created successfully";
+$success = $stmt->execute();
+if ($success) {
+    echo json_encode(['success' => true, 'message' => 'Appointment submitted successfully!']);
 } else {
-    echo "Error: " . htmlspecialchars($stmt->error);
+    echo json_encode(['success' => false, 'message' => 'Error: ' . htmlspecialchars($stmt->error)]);
 }
+exit();
 
 // Close the statement and database connection
 $stmt->close();
 $conn->close();
+?>

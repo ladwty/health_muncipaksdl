@@ -23,10 +23,11 @@ if ($_FILES['lab-request']['error'] === UPLOAD_ERR_OK) {
         ('$targetPath', '$service', '$date', '$time', $has_conditions, $on_medications, $has_allergies, '$emergencyName', '$relationship', '$contact')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Lab test request submitted.";
+        echo json_encode(['success' => true, 'message' => 'Submission successful!']);
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo json_encode(['success' => false, 'message' => 'Error: ' . $conn->error]);
     }
+    exit();
 } else {
     echo "File upload failed.";
 }
