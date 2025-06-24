@@ -1,53 +1,81 @@
-/* Carosel*/
-new Swiper('.carousel-selection', {
-  loop: true,
-
-
-  slidesPerView: 1,
-  spaceBetween: 10,
-
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  breakpoints: {
-
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 15,
+document.addEventListener('DOMContentLoaded', function () {
+  // Carousel
+  new Swiper('.carousel-selection', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    speed: 800,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
     },
-
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 20,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
-  },
-});
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
+  });
 
-/* Faq*/
- document.querySelectorAll('.faq-question').forEach(button => {
+  // FAQ
+  document.querySelectorAll('.faq-question').forEach(button => {
     button.addEventListener('click', () => {
       const faq = button.parentElement;
       faq.classList.toggle('open');
     });
   });
 
- window.onload = function () {
-    const modal = document.getElementById("privacy-modal");
-    const agreeBtn = document.getElementById("agree-btn");
-    const disagreeBtn = document.getElementById("disagree-btn");
+  // Event Calendar
+  const calendarEl = document.getElementById('calendar');
 
-    if (!localStorage.getItem("agreedToPrivacy")) {
-      modal.style.display = "flex";
+  if (!calendarEl) {
+    console.error('Calendar container not found.');
+    return;
+  }
+
+  const calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    height: 'auto',
+    events: [
+      {
+        title: 'Maternity Check Up',
+        start: '2025-06-11',
+        description: 'Free Maternity check up'
+      },
+      {
+        title: 'Free Vaccination',
+        start: '2025-06-28',
+        description: 'City-wide vaccination drive'
+      },
+      {
+        title: 'Maternity Check Up',
+        start: '2025-07-09',
+        description: 'Free Maternity check up'
+      },
+      {
+        title: 'Health Talk',
+        start: '2025-07-05',
+        description: 'Seminar on preventive care'
+      },
+      {
+        title: 'Free Vaccination',
+        start: '2025-07-23',
+        description: 'City-wide vaccination drive'
+      },
+    ],
+    eventClick: function(info) {
+      alert(info.event.title + '\n' + (info.event.extendedProps.description || ''));
     }
+  });
 
-    agreeBtn.onclick = function () {
-      localStorage.setItem("agreedToPrivacy", "true");
-      modal.style.display = "none";
-    };
-
-    disagreeBtn.onclick = function () {
-      alert("You must agree to proceed.");
-    };
-  };
+  calendar.render();
+});

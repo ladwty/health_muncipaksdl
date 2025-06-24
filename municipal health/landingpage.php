@@ -13,6 +13,7 @@ if (!isset($_SESSION["username"])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Medical Center of Tandang Sora</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward_ios" />
+  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
   <link rel="stylesheet" href="landingpage.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
@@ -24,31 +25,37 @@ if (!isset($_SESSION["username"])) {
     <div class="logo">
       <img src="images/Group 8.svg" alt="Logo"/> </a>
       <div style="text-align: center; color: #187B5D;">
-        <h2 style="margin: 0; font-size: 22px;">Medical Center of Tandang Sora</h2>
-        <p style="font-size: 20px; margin: 0; margin-top: 5px; font-weight: 500;">City of Quezon</p>
+        <h2 style="margin: 0; font-size: 20px;">Medical Center of Tandang Sora</h2>
+        <p style="font-size: 19px; margin: 0; margin-top: 5px; font-weight: 500;">City of Quezon</p>
     </div>
     <nav>
       <ul class="nav-links">
         <li class="nav-link"><a href="about.html">About</a></li>
-        <li class="nav-link"><a href="#">History <span class="arrow">&#9662</span></a>
+        <li class="nav-link"><a href="#">Request <span class="arrow">&#9662</span></a>
           <ul class="drop-down">
-            <li><a href="General CheckUp_History.html">General Check-Up</a></li>
-            <li><a href="History_vaccination.html ">Vaccination</a></li>
-            <li><a href="chest_xray.html">Chest X-Ray</a></li>
-            <li><a href="body_mass.html">Body Mass Index Result</a></li>
-            <li><a href="Counseling_session.html">counseling-session</a></li>
-            <li><a href="hiv_testing_history.html ">HIV Testing Result</a></li>
-            <li><a href="blood_pressure_history.html">Blood Pressure & Sugar Testing</a></li>
+            <li><a href="History_vaccination.html ">New Patient</a></li>
+            <li><a href="General CheckUp_History.html">Returning Patient</a></li>
+            <li><a href="chest_xray.html">Laboratory Test</a></li>
           </ul>
         </li>
         <li class="nav-link"><a href="contactUs.html">Contact Us</a></li>
         <li class="nav-link"><a href="Doctors.html">Doctors</a></li>
-        <li class="nav-link"><a href="Services.html">Services</a></li>
+        <li class="nav-link"><a href="#">Services <span class="arrow">&#9662</span></a>
+        <ul class="drop-down">
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="news-file.html">News</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
     <div class="nav-buttons">
-      <a href="appointmentform.html" class="btn appointment-btn">Appointment</a>
-      <a href="LogIn.html" class="btn login-btn"><img src="images/user.png" class="icon"> Log In</a>
+      <a href="logout.php" class="btn login-btn">
+        <img src="images/user.png" class="icon"> Log Out
+      </a>
+
+    <span class="welcome-message">
+      Welcome, <span class="user-name" style="font-size:18px;"><?php echo htmlspecialchars($_SESSION['first_name']); ?>!</span>
+    </span>
     </div>
   </header>
 
@@ -109,10 +116,11 @@ if (!isset($_SESSION["username"])) {
 
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
+</div>
 
     <div class="section-title">
-    <h1>EVENT</h1>
-    <h1>CALENDAR</h1>
+    <h1>EVENT CALENDAR</h1>
+    <div id="calendar" style="max-width: 1000px; margin: 30px auto;"></div>
   </div>
 </section>
 
@@ -239,7 +247,30 @@ if (!isset($_SESSION["username"])) {
 </div>
   
 <!--Eto javascript connection-->
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("privacy-modal");
+    const agreeBtn = document.getElementById("agree-btn");
+    const disagreeBtn = document.getElementById("disagree-btn");
+
+    if (modal && agreeBtn && disagreeBtn) {
+      if (!localStorage.getItem("agreedToPrivacy")) {
+        modal.style.display = "flex";
+      }
+
+      agreeBtn.onclick = function () {
+        localStorage.setItem("agreedToPrivacy", "true");
+        modal.style.display = "none";
+      };
+
+      disagreeBtn.onclick = function () {
+        alert("You must agree to proceed.");
+      };
+    }
+  });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 <script src="script.js"></script>
 
 

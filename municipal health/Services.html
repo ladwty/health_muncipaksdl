@@ -8,38 +8,41 @@
   <script src="Services.js" defer></script>
 </head>
 <body>
+  <!--Navbar-->
   <header class="navbar">
-    <a href="landingpage.html">
-      <div class="logo">
-        <img src="images/Group 8.svg" alt="Logo" />
-      </div>
-    </a>
-    <div style="text-align: center; color: #187B5D;">
-      <h2 style="margin: 0; font-size: 22px;">Medical Center of Tandang Sora</h2>
-      <p style="font-size: 20px; margin: 0; margin-top: 5px; font-weight: 500;">City of Quezon</p>
+    <a href="landingpage.php">
+    <div class="logo">
+      <img src="images/Group 8.svg" alt="Logo"/> </a>
+      <div style="text-align: center; color: #187B5D;">
+        <h2 style="margin: 0; font-size: 20px;">Medical Center of Tandang Sora</h2>
+        <p style="font-size: 19px; margin: 0; margin-top: 5px; font-weight: 500;">City of Quezon</p>
     </div>
     <nav>
       <ul class="nav-links">
-        <li class="nav-link"><a href="#">About</a></li>
-        <li class="nav-link"><a href="#">History <span class="arrow">&#9662;</span></a>
+        <li class="nav-link"><a href="about.html">About</a></li>
+        <li class="nav-link"><a href="#">Request <span class="arrow">&#9662</span></a>
           <ul class="drop-down">
-            <li><a href="images/general-checkup-img.png">General Check-Up</a></li>
-            <li><a href="History_vaccination.html">Vaccination</a></li>
-            <li><a href="chest_xray.html">Chest X-Ray</a></li>
-            <li><a href="body_mass.html">Body Mass Index Result</a></li>
-            <li><a href="Counseling_session.html">Counseling Session</a></li>
-            <li><a href="hiv_testing_history.html">HIV Testing Result</a></li>
-            <li><a href="blood_pressure_history.html">Blood Pressure & Sugar Testing</a></li>
+            <li><a href="History_vaccination.html ">New Patient</a></li>
+            <li><a href="General CheckUp_History.html">Returning Patient</a></li>
+            <li><a href="chest_xray.html">Laboratory Test</a></li>
           </ul>
         </li>
         <li class="nav-link"><a href="contactUs.html">Contact Us</a></li>
         <li class="nav-link"><a href="Doctors.html">Doctors</a></li>
-        <li class="nav-link"><a href="#">Services</a></li>
+        <li class="nav-link"><a href="#">Services <span class="arrow">&#9662</span></a>
+        <ul class="drop-down">
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="news-file.html">News</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
     <div class="nav-buttons">
-      <a href="RegistrationForm.html" class="btn appointment-btn">Appointment</a>
-      <a href="LogIn.html" class="btn login-btn"><img src="images/user.png" class="icon"> Log In</a>
+      <a href="logout.php" class="btn login-btn">
+        <img src="images/user.png" class="icon"> Log Out
+        <a href="RegistrationForm.html" class="btn appointment-btn">Appointment</a>
+    </div>
+      </a>
     </div>
   </header>
 
@@ -110,7 +113,8 @@
     </div>
   </section>
 
-   <footer>
+<!--FOOTER DIZ-->
+<footer>
   <div class="container-footer">
     <div class="content-footer-left">
       <img src="images/Group 8.svg" alt="Logo" class="logo">
@@ -131,6 +135,13 @@
           in our whole municipality.</p>
       </div>
 
+      <div class="content-right-footer">
+        <h3>Hotline</h3>
+        <p>(02) 1234 5678</p>
+        <h3>Mobile Support</h3>
+        <p>0917 890 1234 (Globe)</p>
+        <p>0980 765 4321 (Smart)</p>
+      </div>
 
       <div class="content-footer-bottom">
         <div class="footer-bottom-inner">
