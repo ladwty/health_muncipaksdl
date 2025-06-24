@@ -291,6 +291,7 @@
 
           if (data.success) {
             alert("✅ Login successful! Redirecting...");
+            localStorage.removeItem("agreedToPrivacy");
             window.location.href = "landingpage.php";
           } else {
             alert("❌ " + data.message);

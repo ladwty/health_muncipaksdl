@@ -9,3 +9,25 @@
     "password": "belen",
     "contact": "091234567"
 }
+{
+    "firstName": "Marvin",
+    "middleName": "T",
+    "lastName": "San Diego",
+    "birthdate": "2004-10-31",
+    "sex": "Male",
+    "address": "Paranaque City",
+    "username": "Marvin16",
+    "password": "liecha123",
+    "contact": "09665869764"
+}
+{
+    "firstName": "Joshua",
+    "middleName": "Lumayno",
+    "lastName": "Payongayong",
+    "birthdate": "2003-11-01",
+    "sex": "Male",
+    "address": "Paranaque City",
+    "username": "JoshEtolang12",
+    "password": "joshRambutan12",
+    "contact": "09665869764"
+}

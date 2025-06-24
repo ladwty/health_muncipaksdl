@@ -1,11 +1,11 @@
 
-  body {
-      height: 100%;
-      font-family: Inter;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      display: flex;
+body {
+    height: 100%;
+    font-family: Inter;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
     flex-direction: column;
           
     }
@@ -184,7 +184,7 @@
   font-size: 24px;
   margin: 0;
 }
-    /* Two column layout for emergency contact */
+
     .emergency-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -195,7 +195,6 @@
       margin-bottom: 0;
     }
 
-    /* Radio buttons styling */
     .radio-group {
       display: flex;
       gap: 1.5em;
