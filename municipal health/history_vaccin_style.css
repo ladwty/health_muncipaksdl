@@ -212,174 +212,189 @@ body {
   margin: 0;
 }
 
-/* Vaccination Section */
-.tracker-section {
-  padding: 2em;
-}
+/* Checkbox styling */
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5em;
+      margin-bottom: 1em;
+    }
 
-.info-row {
-  display: flex;
-  flex-wrap: wrap;        
-  gap: 100px;              
-  margin-top: 10px;
-  justify-content: center;
-}
+    .checkbox-grid label {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      cursor: pointer;
+    }
 
-.info-row p {
-  margin: 0;
-  white-space: nowrap;    
-}
+    .checkbox-grid input[type="checkbox"] {
+      margin: 0;
+    }
 
-.patient-info {
-  background-color: #014A34;
-  color: white;
-  padding: 30px;
-  font-weight: bold;
-}
+    .others-input {
+      grid-column: span 2;
+    }
 
-.tracker-table {
+    /* Smoking section layout */
+    .smoking-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1em;
+    }
+
+    .smoking-left .radio-group {
+      flex-direction: column;
+      gap: 0.5em;
+    }
+
+    .smoking-right {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5em;
+    }
+
+    .smoking-right input[type="text"] {
+      flex: 1;
+      margin-bottom: 0;
+    }
+
+    .modal button {
+      background-color: #0c6e4f;
+      color: white;
+      padding: 0.8em 2em;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 1em;
+    }
+
+    .modal .close-btn {
+      position: absolute;
+     top: 1px;
+      right: 20px;
+      font-size: 1.8em;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: white;
+      width: auto;
+      padding: 0;
+      margin: 0;
+      margin-top: 3%;
+    }
+
+    /* Textarea for medications */
+    .medications-textarea {
+      width: 100%;
+      height: 80px;
+      resize: vertical;
+    }
+  
+
+    select {
   width: 100%;
-  border-collapse: collapse;
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
-.tracker-table th,
-.tracker-table td {
-  padding: 12px;
-  text-align: center;
-}
 
-.tracker-table thead {
-  background-color: #014A34;
-  color: white;
-}
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #006b52;
-  color: white;
-}
-
-th, td {
-  padding: 1em;
-  border: 1px solid #187B5D;
-  vertical-align: top;
-}
-
-/*footer*/
-footer{
-  background-color: #187B5D;
-  color: #ffffff;
-  padding: 40px 80px;
-  margin-top: 200px;
-}
-
-.container-footer{
+.button-group {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
-  max-width: 1200px;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+
+.modal .back-btn {
+  background-color: grey; /* light grey */
+  padding: 0.8em 2em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 1em;
+
+}
+
+.section {
+  max-width: 500px;
   margin: 0 auto;
 }
 
-.logo{
-  padding: 0px 10px ;
-  align-content: center;
-}
-.content-footer-left .content-footer-center .content-footer-right{
-  flex: 1;
-  min-width: 250px;
-}
-
-.logo-info{
+.allergy-list {
   display: flex;
-  flex-direction: column;
-}
-
-.content-footer-left{
-  display: flex;
-  align-items: center;
-}
-
-.content-footer-left h2 {
-  font-size: 25px;
-  margin: 10px 0 5px;
-}
-
-.content-footer-left p {
-  font-size: 14px;
-}
-
-.content-footer-center{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.content-footer-center h3 {
-  font-size: 20px;
-  margin-top: 15px;
-  color: #a0e3d3;
-}
-
-.content-footer-center p {
-  font-size: 13px;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.content-footer-right .footer-links {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 15px;
-}
-
-.content-footer-right .footer-links li {
-  margin-bottom: 8px;
-}
-
-.content-footer-right .footer-links a {
-  color: #a0e3d3;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.icons a {
-  margin-right: 10px;
-  display: inline-block;
-}
-
-.icons img {
-  width: 24px;
-  height: 24px;
-}
-
-.content-footer-bottom {
-  margin-top: 30px;
-  padding-top: 15px;
-  font-size: 14px;
-}
-
-.footer-bottom-inner {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 100px;
+  gap: 10px;
+  margin: 10px 0;
 }
 
-.policy-links {
+.allergy-list label {
+  flex: 1 1 45%;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form {
   display: flex;
-  flex-direction: row;
-  margin-top: 2px;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.policy-links a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
+.section-title {
+  color: #1d6845;
   font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.half-width {
+  flex: 1;
+  min-width: 45%;
+}
+
+.sex-group .radio-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 8px;
+}
+
+.radio-group label {
+  font-weight: normal;
 }
 
 .icon{
@@ -391,4 +406,115 @@ footer{
   width: 30px;
   height: 30px;
   margin: 0 5px;
+}
+  .medical-info {
+      width: 400px;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .medical-info h2 {
+      color: #1a7b5d;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question-label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      color: #1a7b5d;
+    }
+    .options {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .options label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    input[type="radio"] {
+      transform: scale(1.3);
+      accent-color: #1a7b5d;
+    }
+
+.allergy-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 10px;
+}
+
+.allergy-column {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+.allergy-column label {
+  margin: 5px 0;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px; 
+}
+
+table {
+  width: 100%;
+  border-collapse:collapse;
+  margin-top: 20px;
+  border-radius: 15px 15px 0px 0px;
+  overflow: hidden; 
+}
+
+td {
+    padding: 18px;
+    text-align: center;
+    border:1px solid #333;
+}
+
+th {
+  background-color: #014A34;
+  color: white;
+  font-weight: bold;
+  padding: 17px;
+}
+
+td {
+    background-color: white;
+
+}
+
+button {
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.edit-btn {
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+
+.containerTable{
+    margin: 0 auto;  /* Center the container */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; 
+    margin-left: auto; /* Center the table horizontally */
+    margin-right: auto; /* Center the table horizontally */
 }
